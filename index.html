@@ -19,24 +19,33 @@
         }
 
         .header {
-            background-color: #f0f0f0;
+            background-color: #ffcc00;
             padding: 10px;
             text-align: center;
         }
 
-        .line {
-            border-top: 1px solid #000000;
-        }
-
         .navigation {
-            float: right;
-            width: 30%;
+            float: left;
+            width: 20%;
             padding: 10px;
             background-color: #f0f0f0;
         }
 
         .content {
             padding: 20px;
+        }
+
+        .line {
+            border-top: 1px solid #000000;
+            margin: 20px 0;
+        }
+
+        .books {
+            text-align: center;
+        }
+
+        .book {
+            margin-bottom: 20px;
         }
 
         .copyright {
@@ -50,27 +59,46 @@
 
     <div class="container">
 
-        <div class="header">
-            <h1>EasyShop.com</h1>
-            <p>Your Description Goes Here</p>
-        </div>
-
-        <div class="line"></div>
-
         <div class="navigation">
             <!-- Navigation Links -->
             <p><a href="#">Home</a></p>
             <p><a href="#">Products</a></p>
+            <p><a href="#">Browse Items</a></p>
+            <p><a href="#">Categories</a></p>
+            <p><a href="#">About Us</a></p>
             <p><a href="#">Contact</a></p>
+            <p><a href="#">FAQ</a></p>
+            <p><a href="#">Help</a></p>
         </div>
 
-        <div class="content">
-            <!-- Content Sections -->
-            <h2>Section 1</h2>
-            <p>Content for Section 1.</p>
+        <div class="header">
+            <h1>EasyShop.com</h1>
+            <p>Your Detailed Description Goes Here. This can be a long text explaining what EasyShop offers, its vision, and more.</p>
+        </div>
 
-            <h2>Section 2</h2>
-            <p>Content for Section 2.</p>
+        <div class="line"></div>
+
+        <div class="content">
+            <div class="books">
+                <!-- Browse Items Section -->
+                <div class="book">
+                    <h2>Book 1</h2>
+                    <p>Description of Book 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <img src="imgur-link-1.jpg" alt="Book 1 Image">
+                </div>
+
+                <div class="book">
+                    <h2>Book 2</h2>
+                    <p>Description of Book 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <img src="imgur-link-2.jpg" alt="Book 2 Image">
+                </div>
+
+                <div class="book">
+                    <h2>Book 3</h2>
+                    <p>Description of Book 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <img src="imgur-link-3.jpg" alt="Book 3 Image">
+                </div>
+            </div>
         </div>
 
         <div class="line"></div>
