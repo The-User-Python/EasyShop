@@ -22,13 +22,24 @@
             background-color: #ffcc00;
             padding: 10px;
             text-align: center;
+            border-bottom: 2px solid #000;
         }
 
         .navigation {
             float: left;
             width: 20%;
             padding: 10px;
-            background-color: #f0f0f0;
+            background-color: #333;
+            color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+            border-bottom: 1px solid #555;
         }
 
         .content {
@@ -46,12 +57,20 @@
 
         .book {
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .book img {
+            width: 50px;
+            margin-right: 10px;
         }
 
         .copyright {
             background-color: #f0f0f0;
             padding: 10px;
             text-align: center;
+            border-top: 2px solid #000;
         }
     </style>
 </head>
@@ -60,15 +79,15 @@
     <div class="container">
 
         <div class="navigation">
-            <!-- Navigation Links -->
-            <p><a href="#">Home</a></p>
-            <p><a href="#">Products</a></p>
-            <p><a href="#">Browse Items</a></p>
-            <p><a href="#">Categories</a></p>
-            <p><a href="#">About Us</a></p>
-            <p><a href="#">Contact</a></p>
-            <p><a href="#">FAQ</a></p>
-            <p><a href="#">Help</a></p>
+            <!-- Box-Style Navigation Bar -->
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Products</a>
+            <a class="nav-link" href="#">Browse Items</a>
+            <a class="nav-link" href="#">Categories</a>
+            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#">FAQ</a>
+            <a class="nav-link" href="#">Help</a>
         </div>
 
         <div class="header">
@@ -82,21 +101,27 @@
             <div class="books">
                 <!-- Browse Items Section -->
                 <div class="book">
-                    <h2>Book 1</h2>
-                    <p>Description of Book 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <img src="imgur-link-1.jpg" alt="Book 1 Image">
+                    <div>
+                        <h2>Book 1</h2>
+                        <p>Description of Book 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
                 </div>
 
                 <div class="book">
-                    <h2>Book 2</h2>
-                    <p>Description of Book 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <img src="imgur-link-2.jpg" alt="Book 2 Image">
+                    <div>
+                        <h2>Book 2</h2>
+                        <p>Description of Book 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
                 </div>
 
                 <div class="book">
-                    <h2>Book 3</h2>
-                    <p>Description of Book 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <img src="imgur-link-3.jpg" alt="Book 3 Image">
+                    <div>
+                        <h2>Book 3</h2>
+                        <p>Description of Book 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
                 </div>
             </div>
         </div>
