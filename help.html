@@ -63,7 +63,6 @@
         .contact-emails {
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
 
         .email {
@@ -71,14 +70,16 @@
         }
 
         .email-link {
-            color: #333;
+            color: #007BFF;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
         }
 
         .email-link:hover {
-            color: #ffcc00;
+            text-decoration: underline;
+        }
+
+        .description {
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -88,53 +89,57 @@
 
         <h1>Help Center</h1>
 
-        <ul class="help-list">
+        <div class="description">
+            <p>If you have any questions or concerns, our Help Center is here to assist you. Feel free to reach out using the provided information below.</p>
+        </div>
+
+        <div class="help-list">
             <!-- Help Items -->
-            <li class="help-item">
-                <div class="help-topic">1. Placing an Order</div>
+            <div class="help-item">
+                <div class="help-topic">Placing an Order</div>
                 <div class="help-content">Learn how to browse products, add items to your cart, and complete the checkout process.</div>
-            </li>
+            </div>
 
-            <li class="help-item">
-                <div class="help-topic">2. Tracking Your Order</div>
+            <div class="help-item">
+                <div class="help-topic">Tracking Your Order</div>
                 <div class="help-content">Find out how to track your order and get updates on its status and estimated delivery time.</div>
-            </li>
+            </div>
 
-            <li class="help-item">
-                <div class="help-topic">3. Returns and Exchanges</div>
+            <div class="help-item">
+                <div class="help-topic">Returns and Exchanges</div>
                 <div class="help-content">Understand our return and exchange policies, and learn how to initiate a return or exchange process.</div>
-            </li>
+            </div>
 
-            <li class="help-item">
-                <div class="help-topic">4. Account Management</div>
+            <div class="help-item">
+                <div class="help-topic">Account Management</div>
                 <div class="help-content">Manage your EasyShop.com account, update personal information, and change your password.</div>
-            </li>
+            </div>
 
-            <li class="help-item">
-                <div class="help-topic">5. Payment and Billing</div>
+            <div class="help-item">
+                <div class="help-topic">Payment and Billing</div>
                 <div class="help-content">Learn about accepted payment methods, billing inquiries, and how to apply discount codes.</div>
-            </li>
+            </div>
 
-            <li class="help-item">
-                <div class="help-topic">6. Technical Issues</div>
+            <div class="help-item">
+                <div class="help-topic">Technical Issues</div>
                 <div class="help-content">Troubleshoot technical problems such as website errors, login issues, and browser compatibility.</div>
-            </li>
+            </div>
 
-            <li class="help-item">
-                <div class="help-topic">7. Product Information</div>
+            <div class="help-item">
+                <div class="help-topic">Product Information</div>
                 <div class="help-content">Get detailed information about products, including specifications, sizes, and materials used.</div>
-            </li>
+            </div>
 
-            <li class="help-item">
-                <div class="help-topic">8. Privacy and Security</div>
+            <div class="help-item">
+                <div class="help-topic">Privacy and Security</div>
                 <div class="help-content">Understand how we handle your personal information and maintain the security of your data.</div>
-            </li>
+            </div>
 
-            <li class="help-item">
-                <div class="help-topic">9. Contacting Customer Support</div>
+            <div class="help-item">
+                <div class="help-topic">Contacting Customer Support</div>
                 <div class="help-content">Learn how to reach our customer support team for assistance and inquiries.</div>
-            </li>
-        </ul>
+            </div>
+        </div>
 
         <div class="contact-info">
             <h2>Contact Information</h2>
