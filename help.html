@@ -63,10 +63,22 @@
         .contact-emails {
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         .email {
             margin: 10px 0;
+        }
+
+        .email-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .email-link:hover {
+            color: #ffcc00;
         }
     </style>
 </head>
@@ -132,12 +144,12 @@
             <div class="contact-emails">
                 <div class="email">
                     <h3>Customer Support</h3>
-                    <p>Email: support@easyshop.com</p>
+                    <p>Email: <a class="email-link" href="mailto:support@easyshop.com">support@easyshop.com</a></p>
                 </div>
 
                 <div class="email">
                     <h3>General Inquiries</h3>
-                    <p>Email: info@easyshop.com</p>
+                    <p>Email: <a class="email-link" href="mailto:info@easyshop.com">info@easyshop.com</a></p>
                 </div>
             </div>
         </div>
