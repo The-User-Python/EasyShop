@@ -45,6 +45,26 @@
             color: #fff;
         }
 
+        .nav-dropdown {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 55px;
+            background-color: #333;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .nav-dropdown a {
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-link:hover .nav-dropdown {
+            display: flex;
+        }
+
         .content {
             padding: 20px;
             display: flex;
@@ -101,7 +121,18 @@
             <!-- Updated Navigation Bar -->
             <a class="nav-link" href="#">Home</a>
             <a class="nav-link" href="#">Products</a>
-            <a class="nav-link" href="#">Browse Items</a>
+            <div class="nav-link">
+                Explore More
+                <div class="nav-dropdown">
+                    <a href="#">Featured Products</a>
+                    <a href="#">Latest Deals</a>
+                    <a href="#">Special Offers</a>
+                    <a href="#">Customer Reviews</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Rewards Program</a>
+                    <a href="#">Track Order</a>
+                </div>
+            </div>
             <a class="nav-link" href="#">Categories</a>
             <a class="nav-link" href="#">About Us</a>
             <a class="nav-link" href="#">Contact</a>
