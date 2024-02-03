@@ -14,8 +14,10 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
         }
 
         .header {
@@ -26,15 +28,14 @@
         }
 
         .navigation {
-            float: left;
-            width: 25%;
-            padding: 20px;
+            display: flex;
+            justify-content: space-between;
             background-color: #333;
             color: #fff;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            margin-top: 70px;
             position: sticky;
             top: 0;
+            z-index: 1;
         }
 
         .nav-link {
@@ -42,12 +43,31 @@
             padding: 15px;
             text-decoration: none;
             color: #fff;
-            border-bottom: 1px solid #555;
         }
 
         .content {
             padding: 20px;
-            margin-left: 30%;
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .description {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .additional-links {
+            width: 25%;
+            padding-left: 15px;
+        }
+
+        .additional-links a {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .line {
@@ -55,28 +75,11 @@
             margin: 20px 0;
         }
 
-        .books {
-            text-align: center;
-        }
-
-        .book {
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .book img {
-            width: 80px;
-            margin-right: 20px;
-        }
-
         .copyright {
             background-color: #f0f0f0;
             padding: 15px;
             text-align: center;
             border-top: 2px solid #000;
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -107,31 +110,19 @@
         <div class="line"></div>
 
         <div class="content">
-            <div class="books">
-                <!-- Browse Items Section -->
-                <div class="book">
-                    <img src="imgur-link-1.jpg" alt="Book 1 Image">
-                    <div>
-                        <h2>Book 1</h2>
-                        <p>Description of Book 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
+            <div class="description">
+                <h2>Welcome to EasyShop.com</h2>
+                <p>This is the description section where you can provide detailed information about your website, services, and vision. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et velit nulla.</p>
+            </div>
 
-                <div class="book">
-                    <img src="imgur-link-2.jpg" alt="Book 2 Image">
-                    <div>
-                        <h2>Book 2</h2>
-                        <p>Description of Book 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-
-                <div class="book">
-                    <img src="imgur-link-3.jpg" alt="Book 3 Image">
-                    <div>
-                        <h2>Book 3</h2>
-                        <p>Description of Book 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
+            <div class="additional-links">
+                <!-- Additional Navigation Links -->
+                <h3>Explore More</h3>
+                <a href="#">Featured Products</a>
+                <a href="#">Latest Deals</a>
+                <a href="#">Special Offers</a>
+                <a href="#">Customer Reviews</a>
+                <a href="#">Blog</a>
             </div>
         </div>
 
