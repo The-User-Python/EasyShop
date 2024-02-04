@@ -16,16 +16,13 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
             padding: 20px;
         }
 
         h1, h2, h3 {
             color: #333;
-        }
-
-        .highlight {
-            color: #ffcc00;
-            font-weight: bold;
         }
 
         .header {
@@ -51,26 +48,6 @@
             padding: 15px;
             text-decoration: none;
             color: #fff;
-        }
-
-        .nav-dropdown {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 55px;
-            background-color: #333;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 2;
-        }
-
-        .nav-dropdown a {
-            padding: 10px;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .nav-link:hover .nav-dropdown {
-            display: flex;
         }
 
         .content {
@@ -109,6 +86,11 @@
             text-align: center;
             border-top: 2px solid #000;
         }
+
+        .highlight {
+            color: #ffcc00;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -124,27 +106,16 @@
             <!-- Updated Navigation Bar -->
             <a class="nav-link" href="#">Home</a>
             <a class="nav-link" href="#">Products</a>
-            <div class="nav-link">
-                Explore More
-                <div class="nav-dropdown">
-                    <a href="#">Featured Products</a>
-                    <a href="#">Latest Deals</a>
-                    <a href="#">Special Offers</a>
-                    <a href="#">Customer Reviews</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Rewards Program</a>
-                    <a href="#">Track Order</a>
-                </div>
-            </div>
+            <a class="nav-link" href="#">Browse Items</a>
             <a class="nav-link" href="#">Categories</a>
             <a class="nav-link" href="#">About Us</a>
             <a class="nav-link" href="#">Contact</a>
             <a class="nav-link" href="#">FAQ</a>
             <a class="nav-link" href="#">Help</a>
-            <a class="nav-linl" href="refund.html">RefundPolicy</a>
             <a class="nav-link" href="#">Terms</a>
             <a class="nav-link" href="#">Privacy</a>
             <a class="nav-link" href="#">Shipping</a>
+            <a class="nav-link" href="refund.html">Refund Policy</a>
         </div>
 
         <div class="line"></div>
@@ -152,8 +123,8 @@
         <div class="content">
             <div class="description">
                 <h2 class="highlight">Discover EasyShopping!</h2>
-                <p>At EasyShop.com, we strive to provide an unmatched shopping experience. Explore our diverse range of products, including electronics, fashion, home essentials, and more. Our user-friendly platform ensures hassle-free browsing and secure transactions.</p>
-                <p>Stay tuned for exciting offers, featured products, and the latest deals. Your satisfaction is our priority!</p>
+                <p>At EasyShop.com, we aim to redefine your online shopping experience. Our curated collection features top-quality products, ranging from electronics to fashion and home essentials. With our user-friendly platform, navigating through our diverse categories is a breeze.</p>
+                <p>Take advantage of exclusive deals, stay updated on the latest trends, and enjoy the convenience of secure transactions. EasyShop.com is committed to delivering satisfaction right to your doorstep.</p>
             </div>
 
             <div class="additional-links">
