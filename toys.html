@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyShop.com - Toys</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product-item {
+            margin: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            width: 300px;
+        }
+
+        .product-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 150px; /* Set your preferred height */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .view-more {
+            background-color: #ffcc00;
+            padding: 10px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Toy Collection</h1>
+
+        <ul class="product-list">
+            <!-- Toy Items -->
+            <li class="product-item">
+                <div class="product-image" style="background-image: url('toy1.jpg');"></div>
+                <div class="product-info">
+                    <h2>Fun Play Set</h2>
+                    <p>Description of the fun play set. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <a href="#" class="view-more">View Item</a>
+            </li>
+
+            <li class="product-item">
+                <div class="product-image" style="background-image: url('toy2.jpg');"></div>
+                <div class="product-info">
+                    <h2>Creative Building Blocks</h2>
+                    <p>Description of the building blocks. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <a href="#" class="view-more">View Item</a>
+            </li>
+
+            <li class="product-item">
+                <div class="product-image" style="background-image: url('toy3.jpg');"></div>
+                <div class="product-info">
+                    <h2>Interactive Robot</h2>
+                    <p>Description of the interactive robot. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <a href="#" class="view-more">View Item</a>
+            </li>
+
+            <li class="product-item">
+                <div class="product-image" style="background-image: url('toy4.jpg');"></div>
+                <div class="product-info">
+                    <h2>Cute Stuffed Animals</h2>
+                    <p>Description of the stuffed animals. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <a href="#" class="view-more">View Item</a>
+            </li>
+
+            <li class="product-item">
+                <div class="product-image" style="background-image: url('toy5.jpg');"></div>
+                <div class="product-info">
+                    <h2>Outdoor Sports Kit</h2>
+                    <p>Description of the outdoor sports kit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <a href="#" class="view-more">View Item</a>
+            </li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
