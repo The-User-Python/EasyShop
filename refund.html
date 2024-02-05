@@ -23,37 +23,53 @@
             color: #333;
         }
 
-        .refund-policy {
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
+        .policy-header {
+            background-color: #ffcc00;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+        }
+
+        .policy-description {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .policy-content {
             background-color: #fff;
+            border: 1px solid #ddd;
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s;
+            margin-bottom: 20px;
         }
 
-        .refund-policy:hover {
+        .policy-content:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .policy-header, .policy-content {
+        .policy-topic, .policy-text {
             padding: 15px;
         }
 
-        .policy-header {
+        .policy-topic {
             background-color: #ffcc00;
             color: #333;
             font-weight: bold;
         }
 
-        .policy-content {
-            color: #555;
+        .contact-info {
+            margin-top: 20px;
         }
 
-        .highlight {
-            color: #ffcc00;
-            font-weight: bold;
+        .contact-emails {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .email {
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -61,17 +77,47 @@
 
     <div class="container">
 
-        <h1>Refund Policy</h1>
+        <div class="policy-header">
+            <h1 class="highlight">Refund Policy</h1>
+            <p>Transparent guidelines to ensure your satisfaction</p>
+        </div>
 
-        <div class="refund-policy">
-            <div class="policy-header">International Transactions</div>
-            <div class="policy-content">
-                <p>If an international transaction occurs, the money will be adjusted immediately and will not be eligible for refund.</p>
-                <p>We strive to provide accurate and transparent information about our refund policies to ensure a clear understanding for our customers.</p>
+        <div class="policy-description">
+            <p>At EasyShop.com, we value your trust and satisfaction. Our refund policy is designed to provide clarity and fairness in case you encounter any issues with your purchase.</p>
+        </div>
+
+        <div class="policy-content">
+            <!-- Refund Policy Items -->
+            <div class="policy-topic">1. International Transactions</div>
+            <div class="policy-text">
+                <p>In the event of an international transaction, any refunded money will be adjusted directly. Unfortunately, international transactions are non-refundable.</p>
+            </div>
+
+            <div class="policy-topic">2. Damaged Products</div>
+            <div class="policy-text">
+                <p>If a product arrives damaged due to our negligence, we will promptly refund your money. The damaged product, however, is yours to keep.</p>
+            </div>
+
+            <div class="policy-topic">3. Non-Reception of Products</div>
+            <div class="policy-text">
+                <p>If you fail to receive a product, we commit to returning your money within a 24-hour period. Your satisfaction is our top priority.</p>
             </div>
         </div>
 
-        <p class="highlight">Please review our complete <a href="#">Refund Policy</a> for more details on our refund processes.</p>
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>If you have any further questions or concerns regarding our refund policy, feel free to reach out to us. We are here to assist you!</p>
+            <div class="contact-emails">
+                <div class="email">
+                    <h3>Customer Support</h3>
+                    <p>Email: support@easyshop.com</p>
+                </div>
+                <div class="email">
+                    <h3>General Inquiries</h3>
+                    <p>Email: info@easyshop.com</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 
