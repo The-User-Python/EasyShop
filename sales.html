@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyShop.com - Sales Trends</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        .header {
+            background-color: #ffcc00;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .description {
+            margin-bottom: 20px;
+        }
+
+        .graph-container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .line {
+            border-top: 1px solid #000000;
+            margin: 20px 0;
+        }
+
+        .copyright {
+            background-color: #f0f0f0;
+            padding: 15px;
+            text-align: center;
+            border-top: 2px solid #000;
+        }
+
+        .highlight {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+    </style>
+    <!-- Include Chart.js script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1 class="highlight">Sales Trends on EasyShop.com</h1>
+            <p>Explore the fluctuations in our sales over different time periods with the interactive line graphs below.</p>
+        </div>
+
+        <div class="content">
+            <div class="description">
+                <p>EasyShop.com is dedicated to providing insights into our sales performance. The following line graphs visualize our sales data for the past month and two months, allowing you to observe trends and patterns.</p>
+            </div>
+
+            <div class="graph-container">
+                <canvas id="oneMonthSalesGraph" width="800" height="400"></canvas>
+            </div>
+
+            <div class="graph-container">
+                <canvas id="twoMonthSalesGraph" width="800" height="400"></canvas>
+            </div>
+        </div>
+
+        <script>
+            // JavaScript function to generate the line graphs using Chart.js
+            document.addEventListener('DOMContentLoaded', function () {
+                // Sample data for illustration purposes
+                const oneMonthSalesData = {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                    datasets: [{
+                        label: '1-Month Sales (₹)',
+                        data: [50000, 70000, 60000, 80000],
+                        borderColor: '#ffcc00',
+                        backgroundColor: 'rgba(255, 204, 0, 0.2)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                };
+
+                const twoMonthSalesData = {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
+                    datasets: [{
+                        label: '2-Month Sales (₹)',
+                        data: [70000, 80000, 75000, 90000, 85000, 80000, 95000, 90000],
+                        borderColor: '#ffcc00',
+                        backgroundColor: 'rgba(255, 204, 0, 0.2)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                };
+
+                const oneMonthSalesGraph = document.getElementById('oneMonthSalesGraph').getContext('2d');
+                const twoMonthSalesGraph = document.getElementById('twoMonthSalesGraph').getContext('2d');
+
+                new Chart(oneMonthSalesGraph, {
+                    type: 'line',
+                    data: oneMonthSalesData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Weeks'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Sales (₹)'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                new Chart(twoMonthSalesGraph, {
+                    type: 'line',
+                    data: twoMonthSalesData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Weeks'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Sales (₹)'
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+
+        <div class="line"></div>
+
+        <div class="copyright">
+            &copy; 2024 EasyShop.com. All Rights Reserved.
+        </div>
+
+    </div>
+
+</body>
+
+</html>
