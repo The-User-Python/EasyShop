@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyShop.com - Products</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        .product-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .product-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .item-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .item-category {
+            padding: 15px;
+            background-color: #ffcc00;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .item-description {
+            padding: 15px;
+            color: #555;
+        }
+
+        .view-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .view-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="product-item">
+            <div class="item-image" style="background-image: url('toys.jpg');"></div>
+            <div class="item-category">Toys</div>
+            <div class="item-description">Explore our delightful collection of toys for all ages. From educational toys to fun playtime companions, we have something for every child.</div>
+            <a href="#" class="view-button">View Item</a>
+        </div>
+
+        <div class="product-item">
+            <div class="item-image" style="background-image: url('homemade.jpg');"></div>
+            <div class="item-category">Home-made Items</div>
+            <div class="item-description">Discover the charm of handcrafted, home-made items. Each piece tells a story and adds a personal touch to your home. Browse our unique selection.</div>
+            <a href="#" class="view-button">View Item</a>
+        </div>
+
+        <div class="product-item">
+            <div class="item-image" style="background-image: url('useful.jpg');"></div>
+            <div class="item-category">Useful Items</div>
+            <div class="item-description">Find practical and useful items that make your daily life easier. From kitchen gadgets to innovative tools, our collection is designed to enhance your lifestyle.</div>
+            <a href="#" class="view-button">View Item</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
