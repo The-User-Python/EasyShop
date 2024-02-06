@@ -14,9 +14,13 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
         }
 
         h1, h2, h3 {
@@ -66,12 +70,37 @@
         .contact-emails {
             display: flex;
             justify-content: space-between;
+            margin-top: 10px;
         }
 
         .email {
             margin: 10px 0;
         }
+
+        .contact-button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #555;
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
+    <script>
+        function toggleContactInfo() {
+            var contactInfo = document.getElementById("contactInfo");
+            contactInfo.classList.toggle("hidden");
+        }
+    </script>
 </head>
 <body>
 
@@ -107,14 +136,17 @@
         <div class="contact-info">
             <h2>Contact Information</h2>
             <p>If you have any further questions or concerns regarding our refund policy, feel free to reach out to us. We are here to assist you!</p>
-            <div class="contact-emails">
-                <div class="email">
-                    <h3>Customer Support</h3>
-                    <p>Email: support@easyshop.com</p>
-                </div>
-                <div class="email">
-                    <h3>General Inquiries</h3>
-                    <p>Email: info@easyshop.com</p>
+            <button class="contact-button" onclick="toggleContactInfo()">Contact Us</button>
+            <div id="contactInfo" class="hidden">
+                <div class="contact-emails">
+                    <div class="email">
+                        <h3>Customer Support</h3>
+                        <p>Email: support@easyshop.com</p>
+                    </div>
+                    <div class="email">
+                        <h3>General Inquiries</h3>
+                        <p>Email: info@easyshop.com</p>
+                    </div>
                 </div>
             </div>
         </div>
