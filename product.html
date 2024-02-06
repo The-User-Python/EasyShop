@@ -73,26 +73,32 @@
             background-color: #555;
         }
     </style>
+    <script>
+        function logItemClick(category) {
+            console.log("User clicked on a " + category + " item.");
+            // Add your custom logic here if needed
+        }
+    </script>
 </head>
 <body>
 
     <div class="container">
 
-        <div class="product-item">
+        <div class="product-item" onclick="logItemClick('Toys')">
             <div class="item-image" style="background-image: url('toys.jpg');"></div>
             <div class="item-category">Toys</div>
             <div class="item-description">Explore our delightful collection of toys for all ages. From educational toys to fun playtime companions, we have something for every child.</div>
             <a href="toys.html" class="view-button">View Item</a>
         </div>
 
-        <div class="product-item">
+        <div class="product-item" onclick="logItemClick('Home-made Items')">
             <div class="item-image" style="background-image: url('homemade.jpg');"></div>
             <div class="item-category">Home-made Items</div>
             <div class="item-description">Discover the charm of handcrafted, home-made items. Each piece tells a story and adds a personal touch to your home. Browse our unique selection.</div>
             <a href="#" class="view-button">View Item</a>
         </div>
 
-        <div class="product-item">
+        <div class="product-item" onclick="logItemClick('Useful Items')">
             <div class="item-image" style="background-image: url('useful.jpg');"></div>
             <div class="item-category">Useful Items</div>
             <div class="item-description">Find practical and useful items that make your daily life easier. From kitchen gadgets to innovative tools, our collection is designed to enhance your lifestyle.</div>
