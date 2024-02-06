@@ -15,16 +15,17 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            padding: 20px;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
-        h1,
-        h2,
-        h3 {
+        h1, h2, h3 {
             color: #333;
         }
 
@@ -33,15 +34,23 @@
             padding: 20px;
             text-align: center;
             border-bottom: 2px solid #000;
-        }
-
-        .description {
-            margin-top: 20px;
+            border-radius: 10px 10px 0 0;
             margin-bottom: 20px;
         }
 
-        .link-container {
+        h2 {
             margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
         }
 
         .nav-link {
@@ -53,12 +62,49 @@
             margin-bottom: 10px;
             border-radius: 5px;
             transition: background-color 0.3s;
+            text-align: center;
         }
 
         .nav-link:hover {
             background-color: #555;
         }
+
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #555;
+        }
     </style>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleScroll() {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        }
+
+        window.onscroll = function () {
+            handleScroll();
+        };
+    </script>
 </head>
 
 <body>
@@ -72,15 +118,14 @@
 
         <h2>Help Center</h2>
 
-        <div class="description">
-            <p>At EasyShop.com, our commitment to customer satisfaction goes beyond just providing great products. Our Help Center is designed to assist you in navigating through any questions or concerns you may encounter during your shopping journey.</p>
-            <p>Whether you're curious about our ordering process, tracking your shipments, or understanding our policies, you'll find valuable information below. If you need further assistance, feel free to reach out to our dedicated support team.</p>
-        </div>
+        <p>At EasyShop.com, our commitment to customer satisfaction goes beyond just providing great products. Our Help Center is designed to assist you in navigating through any questions or concerns you may encounter during your shopping journey. Whether you're curious about our ordering process, tracking your shipments, or understanding our policies, you'll find valuable information below. If you need further assistance, feel free to reach out to our dedicated support team.</p>
 
         <div class="link-container">
             <a class="nav-link" href="contact.html">Contact Us</a>
             <a class="nav-link" href="refund.html">Refund Policy</a>
         </div>
+
+        <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
 
     </div>
 
