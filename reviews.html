@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyShop.com - Reviews</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        .header {
+            background-color: #ffcc00;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .description {
+            margin-bottom: 20px;
+        }
+
+        .line {
+            border-top: 1px solid #000000;
+            margin: 20px 0;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .search-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%; /* Full-width search input */
+        }
+
+        .search-button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comment-section {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .comment-form input,
+        .comment-form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .comment-form button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comments {
+            margin-top: 20px;
+        }
+
+        .comment {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .comment button {
+            margin-left: 10px;
+            padding: 5px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .additional-links {
+            margin-top: 20px;
+        }
+
+        .additional-links a {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .copyright {
+            background-color: #f0f0f0;
+            padding: 15px;
+            text-align: center;
+            border-top: 2px solid #000;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .navigation-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-link {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1 class="highlight">EasyShop.com - Reviews</h1>
+            <p>Explore reviews from our satisfied customers. Share your experience with us!</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="content">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search for reviews, usernames, products">
+                <button class="search-button" onclick="searchRedirect()">Search</button>
+            </div>
+
+            <div class="comment-section">
+                <h3 class="highlight">Leave a Review</h3>
+                <form class="comment-form" onsubmit="submitComment(event)">
+                    <input type="text" placeholder="Username" id="username" required>
+                    <input type="text" placeholder="Real Name" id="realName" required>
+                    <input type="email" placeholder="Email Address" id="email" required>
+                    <textarea placeholder="Your Review" rows="4" id="review" required></textarea>
+                    <button type="submit">Submit Review</button>
+                </form>
+
+                <div class="comments" id="commentsContainer">
+                    <h3 class="highlight">Reviews</h3>
+                    <!-- Reviews will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="additional-links">
+            <h3 class="highlight">Explore More</h3>
+            <a href="product.html">Featured Products</a>
+            <a href="terms.ht">Terms and Conditions</a>
+            <a href="refund.html">Refund Policy</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="help.html">Help Center</a>
+            <a href="faq.html">FAQs</a>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="copyright">
+            <p>&copy; 2024 EasyShop.com. All Rights Reserved.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Your existing JavaScript functions for comment handling and local storage can be added here
+        // For example, you can use the following functions:
+
+        // Function to submit a new comment
+        function submitComment(event) {
+            event.preventDefault();
+
+            // Get values from the form
+            const username = document.getElementById('username').value;
+            const realName = document.getElementById('realName').value;
+            const email = document.getElementById('email').value;
+            const review = document.getElementById('review').value;
+
+            // Create a unique ID for the comment
+            const commentId = new Date().getTime().toString();
+
+            // Create a new comment object
+            const newComment = {
+                id: commentId,
+                username,
+                realName,
+                email,
+                review,
+            };
+
+            // Save the new comment to local storage
+            saveComment(newComment);
+
+            // Clear the form
+            document.getElementById('username').value = '';
+            document.getElementById('realName').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('review').value = '';
+
+            // Refresh the comments section
+            refreshComments();
+        }
+
+        // Function to save a comment to local storage
+        function saveComment(comment) {
+            // Get existing comments from local storage
+            const existingComments = JSON.parse(localStorage.getItem('comments')) || [];
+
+            // Add the new comment to the array
+            existingComments.push(comment);
+
+            // Save the updated array back to local storage
+            localStorage.setItem('comments', JSON.stringify(existingComments));
+        }
+
+        // Function to refresh the comments section
+        function refreshComments() {
+            // Get the comments container
+            const commentsContainer = document.getElementById('commentsContainer');
+
+            // Clear existing comments
+            commentsContainer.innerHTML = '';
+
+            // Get comments from local storage
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+            // Display each comment in the container
+            comments.forEach(comment => {
+                const commentDiv = document.createElement('div');
+                commentDiv.classList.add('comment');
+
+                const username = document.createElement('p');
+                username.textContent = `Username: ${comment.username}`;
+
+                const realName = document.createElement('p');
+                realName.textContent = `Real Name: ${comment.realName}`;
+
+                const email = document.createElement('p');
+                email.textContent = `Email: ${comment.email}`;
+
+                const review = document.createElement('p');
+                review.textContent = `Review: ${comment.review}`;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', () => deleteComment(comment.id));
+
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.addEventListener('click', () => editComment(comment.id));
+
+                commentDiv.appendChild(username);
+                commentDiv.appendChild(realName);
+                commentDiv.appendChild(email);
+                commentDiv.appendChild(review);
+                commentDiv.appendChild(deleteButton);
+                commentDiv.appendChild(editButton);
+
+                commentsContainer.appendChild(commentDiv);
+            });
+        }
+
+        // Function to delete a comment
+        function deleteComment(commentId) {
+            // Get comments from local storage
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+            // Find the index of the comment with the specified ID
+            const commentIndex = comments.findIndex(comment => comment.id === commentId);
+
+            // Remove the comment from the array
+            comments.splice(commentIndex, 1);
+
+            // Save the updated array back to local storage
+            localStorage.setItem('comments', JSON.stringify(comments));
+
+            // Refresh the comments section
+            refreshComments();
+        }
+
+        // Function to edit a comment
+        function editComment(commentId) {
+            // Get comments from local storage
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+            // Find the comment with the specified ID
+            const commentToEdit = comments.find(comment => comment.id === commentId);
+
+            // Populate the form with the comment's values
+            document.getElementById('username').value = commentToEdit.username;
+            document.getElementById('realName').value = commentToEdit.realName;
+            document.getElementById('email').value = commentToEdit.email;
+            document.getElementById('review').value = commentToEdit.review;
+
+            // Delete the original comment
+            deleteComment(commentId);
+        }
+
+        // Initial refresh of comments when the page loads
+        refreshComments();
+
+        // Your existing searchRedirect() function can be added here
+
+    </script>
+
+</body>
+
+</html>
