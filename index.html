@@ -22,9 +22,7 @@
             padding: 20px;
         }
 
-        h1,
-        h2,
-        h3 {
+        h1, h2, h3 {
             color: #333;
         }
 
@@ -100,6 +98,63 @@
             color: #ffcc00;
             font-weight: bold;
         }
+
+        /* Enhanced search bar and results styling */
+
+        .search-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            border-radius: 3px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .search-button {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-button:hover {
+            background-color: #e0b800;
+        }
+
+        .search-results {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-link {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .result-link:hover {
+            color: #ffcc00;
+        }
     </style>
 </head>
 
@@ -113,7 +168,6 @@
         </div>
 
         <div class="navigation">
-            <!-- Updated Navigation Bar -->
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link" href="product.html">Products</a>
             <a class="nav-link" href="contact.html">Contact</a>
@@ -124,27 +178,31 @@
             <a class="nav-link" href="refund.html">Refund Policy</a>
         </div>
 
-        <div class="line"></div>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search for products, terms, help, refund policy...">
+            <button class="search-button" onclick="searchRedirect()">Search</button>
+        </div>
+
+        <div class="search-results" id="searchResults">
+            <!-- Search results will be displayed here -->
+        </div>
 
         <div class="content">
             <div class="description">
                 <h2 class="highlight">Discover EasyShopping!</h2>
-                <p>Welcome to EasyShop.com, where your online shopping experience transcends expectations. Dive into our curated collection encompassing top-tier products, spanning from cutting-edge electronics to trending fashion and essential home items.</p>
-                <p>Our user-friendly platform is designed for seamless navigation, ensuring you find what you desire effortlessly. Unlock exclusive deals, stay ahead with the latest trends, and enjoy secure transactions. EasyShop.com is your trusted partner in satisfying your shopping cravings.</p>
-                <p>Key Features:</p>
-                <ul>
-                    <li>Curated Collection</li>
-                    <li>User-Friendly Platform</li>
-                    <li>Exclusive Deals</li>
-                    <li>Secure Transactions</li>
-                    <li>LATEST! Rewards Program</li>
-                </ul>
+                <p>EasyShop.com is your go-to destination for a seamless online shopping experience. Immerse yourself in our curated collection, featuring top-tier products ranging from electronics to fashion and home essentials.</p>
+                <p>Our user-friendly platform ensures hassle-free navigation, while exclusive deals guarantee you get the best value for your purchases. EasyShop.com – where satisfaction meets convenience.</p>
             </div>
 
             <div class="additional-links">
-                <!-- Additional Navigation Links -->
                 <h3 class="highlight">Explore More</h3>
-                <a href="sales.html">Net Sales</a>
+                <a href="#">Featured Products</a>
+                <a href="#">Latest Deals</a>
+                <a href="#">Special Offers</a>
+                <a href="#">Customer Reviews</a>
+                <a href="#">Blog</a>
+                <a href="#">Rewards Program</a>
+                <a href="#">Track Order</a>
             </div>
         </div>
 
@@ -155,6 +213,26 @@
         </div>
 
     </div>
+
+    <script>
+        function searchRedirect() {
+            const searchInput = document.querySelector('.search-input');
+            const searchTerm = searchInput.value.toLowerCase();
+            const pages = {
+                'product': 'product.html',
+                'terms': 'terms.html',
+                'help': 'help.html',
+                'refund policy': 'refund.html'
+                // Add more pages as needed
+            };
+
+            if (pages.hasOwnProperty(searchTerm)) {
+                window.location.href = pages[searchTerm];
+            } else {
+                alert('No matching page found for the search term.');
+            }
+        }
+    </script>
 
 </body>
 
