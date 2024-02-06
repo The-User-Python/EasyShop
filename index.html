@@ -12,10 +12,11 @@
             padding: 0;
             background-color: #f8f8f8;
             color: #333;
+            transition: background-color 0.5s;
         }
 
         .container {
-            max-width: 1400px; /* Increased max-width for a broader layout */
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -44,6 +45,8 @@
             position: sticky;
             top: 0;
             z-index: 1;
+            transition: background-color 0.5s;
+            align-items: center;
         }
 
         .nav-link {
@@ -59,11 +62,29 @@
             background-color: #555;
         }
 
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         .content {
             padding: 20px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            flex-grow: 1;
+            align-items: stretch;
         }
 
         .description {
@@ -72,8 +93,12 @@
         }
 
         .additional-links {
-            width: 25%;
-            padding-left: 15px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .additional-links h3 {
+            color: #ffcc00;
         }
 
         .additional-links a {
@@ -93,6 +118,7 @@
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+            transition: background-color 0.5s;
         }
 
         .search-input {
@@ -110,10 +136,110 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        /* Add any additional styling here */
+        .search-button:hover {
+            background-color: #555;
+        }
 
+        .new-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #555;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .language-switcher button {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .language-switcher button:hover {
+            text-decoration: underline;
+        }
+
+        .clock {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .greeting {
+            color: #555;
+            margin-top: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .navigation {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-link {
+                margin-bottom: 10px;
+            }
+
+            .content {
+                flex-direction: column;
+            }
+
+            .additional-links {
+                width: 100%;
+                padding-left: 0;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-input {
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -127,9 +253,16 @@
         </div>
 
         <div class="navigation">
-            <!-- Updated Navigation Bar -->
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link" href="product.html">Products</a>
+            <div class="dropdown">
+                <a class="nav-link" href="#">Categories</a>
+                <div class="dropdown-content">
+                    <a href="#">Electronics</a>
+                    <a href="#">Fashion</a>
+                    <a href="#">Home Essentials</a>
+                </div>
+            </div>
             <a class="nav-link" href="contact.html">Contact</a>
             <a class="nav-link" href="faq.html">FAQ</a>
             <a class="nav-link" href="help.html">Help</a>
@@ -149,7 +282,6 @@
             </div>
 
             <div class="additional-links">
-                <!-- Additional Navigation Links -->
                 <h3 class="highlight">Explore More</h3>
                 <a class="nav-link" href="forum.html">Forum</a>
             </div>
@@ -157,11 +289,55 @@
 
         <div class="line"></div>
 
-        <!-- Enhanced Search Bar -->
+        <div class="new-section">
+            <h2 class="highlight">Exciting New Arrivals!</h2>
+            <p>Discover the latest trends and must-have items. Shop now to stay ahead of the fashion curve.</p>
+            <a class="nav-link" href="new-arrivals.html">View New Arrivals</a>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <!-- Featured Product 1 -->
+                    <img src="product1.jpg" alt="Featured Product 1">
+                    <h3 class="highlight">Featured Product 1</h3>
+                    <p>Explore the amazing features of our latest product.</p>
+                    <a class="nav-link" href="featured-product1.html">Shop Now</a>
+                </div>
+
+                <div class="carousel-item">
+                    <!-- Featured Product 2 -->
+                    <img src="product2.jpg" alt="Featured Product 2">
+                    <h3 class="highlight">Featured Product 2</h3>
+                    <p>Discover the style and elegance of our new arrival.</p>
+                    <a class="nav-link" href="featured-product2.html">Shop Now</a>
+                </div>
+
+                <!-- Add more carousel items as needed -->
+
+            </div>
+        </div>
+
+        <div class="line"></div>
+
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Search for products, terms, help, refund policy">
             <button class="search-button" onclick="searchRedirect()">Search</button>
         </div>
+
+        <div class="language-switcher">
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('es')">Español</button>
+            <!-- Add more language buttons as needed -->
+        </div>
+
+        <!-- New Features: Clock and Greeting -->
+        <div class="clock" id="clock"></div>
+        <div class="greeting" id="greeting"></div>
+
+        <div class="scroll-to-top" onclick="scrollToTop()">Scroll to Top</div>
 
         <div class="copyright">
             &copy; 2024 EasyShop.com. All Rights Reserved.
@@ -169,28 +345,67 @@
 
     </div>
 
-    <!-- JavaScript for Search Redirect -->
     <script>
         function searchRedirect() {
             var searchTerm = document.querySelector('.search-input').value.toLowerCase();
 
-            // Define predefined pages associated with search terms
             var searchPages = {
                 'products': 'product.html',
                 'terms': 'terms.html',
                 'help': 'help.html',
                 'refund': 'refund.html',
                 'forum': 'forum.html'
-                // Add more as needed
             };
 
-            // Redirect if a match is found, otherwise show an alert
             if (searchPages.hasOwnProperty(searchTerm)) {
                 window.location.href = searchPages[searchTerm];
             } else {
                 alert('No matching page found for the entered search term.');
             }
         }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        function changeLanguage(lang) {
+            // Implement language change logic here
+            alert('Language changed to ' + lang);
+        }
+
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            document.getElementById('clock').innerHTML = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+
+            var greeting = getGreeting(hours);
+            document.getElementById('greeting').innerHTML = greeting;
+
+            setTimeout(updateClock, 1000);
+        }
+
+        function formatTime(time) {
+            return time < 10 ? '0' + time : time;
+        }
+
+        function getGreeting(hours) {
+            var greeting = '';
+            if (hours < 12) {
+                greeting = 'Good morning!';
+            } else if (hours < 18) {
+                greeting = 'Good afternoon!';
+            } else {
+                greeting = 'Good evening!';
+            }
+            return greeting;
+        }
+
+        // Initial clock update
+        updateClock();
     </script>
 
 </body>
