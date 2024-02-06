@@ -15,14 +15,16 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px; /* Increased max-width for a broader layout */
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             padding: 20px;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #333;
         }
 
@@ -87,74 +89,31 @@
             margin: 20px 0;
         }
 
-        .copyright {
-            background-color: #f0f0f0;
-            padding: 15px;
-            text-align: center;
-            border-top: 2px solid #000;
-        }
-
-        .highlight {
-            color: #ffcc00;
-            font-weight: bold;
-        }
-
-        /* Enhanced search bar and results styling */
-
         .search-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 10px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
         }
 
         .search-input {
             flex: 1;
-            padding: 8px;
-            border: none;
-            border-radius: 3px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             margin-right: 10px;
-            font-size: 16px;
         }
 
         .search-button {
-            background-color: #ffcc00;
-            color: #333;
             padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
             border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .search-button:hover {
-            background-color: #e0b800;
-        }
-
-        .search-results {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #fff;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
 
-        .result-link {
-            display: block;
-            margin-bottom: 10px;
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+        /* Add any additional styling here */
 
-        .result-link:hover {
-            color: #ffcc00;
-        }
     </style>
 </head>
 
@@ -168,6 +127,7 @@
         </div>
 
         <div class="navigation">
+            <!-- Updated Navigation Bar -->
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link" href="product.html">Products</a>
             <a class="nav-link" href="contact.html">Contact</a>
@@ -178,14 +138,7 @@
             <a class="nav-link" href="refund.html">Refund Policy</a>
         </div>
 
-        <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Search for products, terms, help, refund policy...">
-            <button class="search-button" onclick="searchRedirect()">Search</button>
-        </div>
-
-        <div class="search-results" id="searchResults">
-            <!-- Search results will be displayed here -->
-        </div>
+        <div class="line"></div>
 
         <div class="content">
             <div class="description">
@@ -195,6 +148,7 @@
             </div>
 
             <div class="additional-links">
+                <!-- Additional Navigation Links -->
                 <h3 class="highlight">Explore More</h3>
                 <a href="#">Featured Products</a>
                 <a href="#">Latest Deals</a>
@@ -208,28 +162,37 @@
 
         <div class="line"></div>
 
+        <!-- Enhanced Search Bar -->
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search for products, terms, help, refund policy">
+            <button class="search-button" onclick="searchRedirect()">Search</button>
+        </div>
+
         <div class="copyright">
             &copy; 2024 EasyShop.com. All Rights Reserved.
         </div>
 
     </div>
 
+    <!-- JavaScript for Search Redirect -->
     <script>
         function searchRedirect() {
-            const searchInput = document.querySelector('.search-input');
-            const searchTerm = searchInput.value.toLowerCase();
-            const pages = {
+            var searchTerm = document.querySelector('.search-input').value.toLowerCase();
+
+            // Define predefined pages associated with search terms
+            var searchPages = {
                 'product': 'product.html',
                 'terms': 'terms.html',
                 'help': 'help.html',
                 'refund policy': 'refund.html'
-                // Add more pages as needed
+                // Add more as needed
             };
 
-            if (pages.hasOwnProperty(searchTerm)) {
-                window.location.href = pages[searchTerm];
+            // Redirect if a match is found, otherwise show an alert
+            if (searchPages.hasOwnProperty(searchTerm)) {
+                window.location.href = searchPages[searchTerm];
             } else {
-                alert('No matching page found for the search term.');
+                alert('No matching page found for the entered search term.');
             }
         }
     </script>
