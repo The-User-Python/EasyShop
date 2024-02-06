@@ -14,9 +14,13 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
         }
 
         h1, h2, h3 {
@@ -25,10 +29,16 @@
 
         p {
             margin-bottom: 15px;
+            color: #555;
         }
 
         a {
-            color: #333;
+            color: #007BFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:hover {
             text-decoration: underline;
         }
 
@@ -36,22 +46,90 @@
             margin-bottom: 20px;
             border: 1px solid #ddd;
             background-color: #fff;
-            border-radius: 5px;
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s;
             padding: 20px;
+            text-align: left;
         }
 
         .faq-item:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
+        .faq-item h2 {
+            margin-bottom: 10px;
+        }
+
         .highlight {
             color: #ffcc00;
             font-weight: bold;
         }
+
+        .collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .expand-button {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .expand-button:hover {
+            background-color: #555;
+        }
+
+        #backToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #555;
+        }
     </style>
+    <script>
+        function toggleCollapse(faqItem) {
+            const content = faqItem.querySelector('.collapse-content');
+            const button = faqItem.querySelector('.expand-button');
+            
+            content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
+            button.innerText = content.style.maxHeight ? 'Collapse' : 'Expand';
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleScroll() {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        }
+
+        window.onscroll = function () {
+            handleScroll();
+        };
+    </script>
 </head>
 <body>
 
@@ -59,27 +137,45 @@
 
         <h1 class="highlight">Frequently Asked Questions (FAQ)</h1>
 
-        <div class="faq-item">
+        <div class="faq-item" onclick="toggleCollapse(this)">
             <h2>1. Do I need to create an account to shop on EasyShop.com?</h2>
             <p>No, EasyShop.com does not require user accounts or signups. We aim to provide a hassle-free shopping experience without the need for creating accounts.</p>
+            <div class="collapse-content">
+                <p>This is additional information that can be displayed when the user clicks "Expand".</p>
+            </div>
+            <button class="expand-button">Expand</button>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item" onclick="toggleCollapse(this)">
             <h2>2. What products do you offer?</h2>
             <p>EasyShop.com offers a diverse range of products, including electronics, fashion, home essentials, toys, and more. Explore our website to discover a variety of quality items.</p>
+            <div class="collapse-content">
+                <p>This is additional information that can be displayed when the user clicks "Expand".</p>
+            </div>
+            <button class="expand-button">Expand</button>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item" onclick="toggleCollapse(this)">
             <h2>3. How can I learn about your refund policy?</h2>
             <p>Our refund policy is detailed on our <a href="refund.html">Refund Policy</a> page. Please visit this page for information on refunds and returns.</p>
+            <div class="collapse-content">
+                <p>This is additional information that can be displayed when the user clicks "Expand".</p>
+            </div>
+            <button class="expand-button">Expand</button>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item" onclick="toggleCollapse(this)">
             <h2>4. Can I shop internationally on EasyShop.com?</h2>
             <p>Currently, EasyShop.com caters to domestic customers. International transactions are not supported, and any foreign exchange money received will be adjusted and not returned.</p>
+            <div class="collapse-content">
+                <p>This is additional information that can be displayed when the user clicks "Expand".</p>
+            </div>
+            <button class="expand-button">Expand</button>
         </div>
 
         <!-- Add more FAQ items as needed -->
+
+        <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
 
     </div>
 
