@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyShop.com</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <style>
+        /* General Styles */
         body {
-            font-family: 'Trebuchet MS', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f8f8f8;
@@ -23,12 +25,11 @@
             padding: 20px;
         }
 
-        h1,
-        h2,
-        h3 {
+        h1, h2, h3 {
             color: #333;
         }
 
+        /* Header Styles */
         .header {
             background-color: #ffcc00;
             padding: 20px;
@@ -36,6 +37,7 @@
             border-bottom: 2px solid #000;
         }
 
+        /* Navigation Styles */
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -79,6 +81,7 @@
             display: block;
         }
 
+        /* Content Styles */
         .content {
             padding: 20px;
             display: flex;
@@ -114,6 +117,7 @@
             margin: 20px 0;
         }
 
+        /* Search Bar Styles */
         .search-bar {
             margin-bottom: 20px;
             display: flex;
@@ -143,6 +147,7 @@
             background-color: #555;
         }
 
+        /* New Section Styles */
         .new-section {
             margin-top: 20px;
             padding: 20px;
@@ -151,67 +156,7 @@
             animation: fadeIn 1s ease-in;
         }
 
-        .carousel-container {
-            overflow: hidden;
-            margin-top: 20px;
-        }
-
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-item {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: none;
-        }
-
-        .scroll-to-top:hover {
-            background-color: #555;
-        }
-
-        .language-switcher {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .language-switcher button {
-            background: none;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .language-switcher button:hover {
-            text-decoration: underline;
-        }
-
-        .clock {
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #333;
-        }
-
-        .greeting {
-            color: #555;
-            margin-top: 10px;
-        }
-
+        /* Dynamic Background Styles */
         .dynamic-bg {
             min-height: 200px;
             background: linear-gradient(45deg, #ffcc00, #333);
@@ -225,6 +170,7 @@
             transition: background 0.5s;
         }
 
+        /* Featured Categories Styles */
         .featured-categories {
             display: flex;
             gap: 20px;
@@ -247,6 +193,7 @@
             transform: scale(1.05);
         }
 
+        /* Best Sellers Styles */
         .best-sellers {
             margin-top: 20px;
             background-color: #fff;
@@ -296,6 +243,7 @@
             font-size: 0.9em;
         }
 
+        /* Responsive Styles */
         @media only screen and (max-width: 600px) {
             .navigation {
                 flex-direction: column;
@@ -355,11 +303,13 @@
 
     <div class="container">
 
+        <!-- Header Section -->
         <div class="header">
             <h1 class="highlight">Welcome to EasyShop.com</h1>
             <p>Your ultimate destination for quality products and a delightful shopping experience. Explore our extensive collection and indulge in exclusive deals.</p>
         </div>
 
+        <!-- Navigation Section -->
         <div class="navigation">
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link" href="product.html">Products</a>
@@ -380,8 +330,10 @@
             <a class="nav-link" href="reviews.html">Reviews</a>
         </div>
 
+        <!-- Separator Line -->
         <div class="line"></div>
 
+        <!-- Content Section -->
         <div class="content">
             <div class="description">
                 <h2 class="highlight">Discover EasyShopping!</h2>
@@ -389,22 +341,27 @@
                 <p>Our user-friendly platform ensures hassle-free navigation, while exclusive deals guarantee you get the best value for your purchases. EasyShop.com – where satisfaction meets convenience.</p>
             </div>
 
+            <!-- Additional Links Section -->
             <div class="additional-links">
                 <h3 class="highlight">Explore More</h3>
                 <a class="nav-link" href="forum.html">Forum</a>
             </div>
         </div>
 
+        <!-- Separator Line -->
         <div class="line"></div>
 
+        <!-- Dynamic Background Section -->
         <div class="dynamic-bg">
             <h2 class="highlight">New Season, New Styles</h2>
             <p>Check out our latest arrivals and stay ahead of the fashion curve.</p>
             <a class="nav-link" href="new-arrivals.html">View New Arrivals</a>
         </div>
 
+        <!-- Separator Line -->
         <div class="line"></div>
 
+        <!-- Featured Categories Section -->
         <div class="featured-categories">
             <div class="featured-category">
                 <h3 class="highlight">Electronics</h3>
@@ -423,8 +380,10 @@
             </div>
         </div>
 
+        <!-- Separator Line -->
         <div class="line"></div>
 
+        <!-- Best Sellers Section -->
         <div class="best-sellers">
             <h2 class="highlight">Best Sellers</h2>
             <div class="best-sellers-carousel">
@@ -442,13 +401,16 @@
             </div>
         </div>
 
+        <!-- Separator Line -->
         <div class="line"></div>
 
+        <!-- Search Bar Section -->
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Search for products, terms, help, refund policy">
             <button class="search-button" onclick="searchRedirect()">Search</button>
         </div>
 
+        <!-- Language Switcher Section -->
         <div class="language-switcher">
             <button onclick="changeLanguage('en')">English</button>
             <button onclick="changeLanguage('es')">Español</button>
@@ -459,14 +421,17 @@
         <div class="clock" id="clock"></div>
         <div class="greeting" id="greeting"></div>
 
+        <!-- Scroll to Top Section -->
         <div class="scroll-to-top" onclick="scrollToTop()">Scroll to Top</div>
 
+        <!-- Copyright Section -->
         <div class="copyright">
             &copy; 2024 EasyShop.com. All Rights Reserved.
         </div>
 
     </div>
 
+    <!-- JavaScript Section -->
     <script>
         function searchRedirect() {
             var searchTerm = document.querySelector('.search-input').value.toLowerCase();
@@ -521,7 +486,7 @@
             } else if (hours < 18) {
                 greeting = 'Good afternoon!';
             } else {
-                greeting = 'Good evening!';
+                greeting = 'Good Night!';
             }
             return greeting;
         }
