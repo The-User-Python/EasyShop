@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyShop.com - Refund Policy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: 'Trebuchet MS', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background: linear-gradient(to bottom, #eef, #dde); /* Soft gradient background */
             color: #333;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 40px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
             text-align: center;
+            position: relative; /* Required for 3D transformation */
         }
 
         h1, h2, h3 {
-            color: #333;
+            color: #555;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .policy-header {
@@ -32,67 +36,94 @@
             padding: 20px;
             text-align: center;
             border-bottom: 2px solid #000;
+            border-radius: 20px 20px 0 0;
         }
 
         .policy-description {
             margin-top: 20px;
-            color: #555;
+            color: #777;
         }
 
         .policy-content {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.5s; /* Added transform transition */
             margin-bottom: 20px;
+            transform-style: preserve-3d; /* Required for 3D transformation */
         }
 
         .policy-content:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transform: rotateY(10deg) rotateX(5deg); /* 3D transformation */
         }
 
         .policy-topic, .policy-text {
-            padding: 15px;
+            padding: 20px;
         }
 
         .policy-topic {
             background-color: #ffcc00;
             color: #333;
             font-weight: bold;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .policy-text {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
         }
 
         .contact-info {
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .contact-emails {
             display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
+            justify-content: center;
+            margin-top: 20px;
         }
 
         .email {
-            margin: 10px 0;
+            margin: 10px;
         }
 
         .contact-button {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
+            background-color: #ffcc00;
+            color: #333;
+            padding: 15px 30px;
             border: none;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .contact-button:hover {
-            background-color: #555;
+            background-color: #ffa500;
+            transform: translateY(-5px); /* Button lift effect */
         }
 
         .hidden {
             display: none;
+        }
+
+        .social-icons {
+            margin-top: 40px;
+        }
+
+        .social-icons a {
+            color: #333;
+            text-decoration: none;
+            font-size: 24px;
+            margin: 0 15px;
+            transition: transform 0.3s; /* Added transform transition */
+        }
+
+        .social-icons a:hover {
+            color: #ffcc00;
+            transform: scale(1.2); /* Icon zoom effect */
         }
     </style>
     <script>
@@ -149,6 +180,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="social-icons">
+            <h2>Connect with Us</h2>
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin-in"></a>
         </div>
 
     </div>
