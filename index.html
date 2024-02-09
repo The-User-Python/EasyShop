@@ -122,25 +122,28 @@
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+            justify-content: flex-end;
             transition: background-color 0.5s;
         }
 
         .search-input {
-            flex: 1;
-            padding: 10px;
+            padding: 8px;
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-right: 10px;
+            width: 150px;
+            font-size: 14px;
         }
 
         .search-button {
-            padding: 10px 20px;
+            padding: 8px 15px;
             background-color: #333;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-size: 14px;
         }
 
         .search-button:hover {
@@ -270,6 +273,7 @@
 
             .search-input {
                 margin-bottom: 10px;
+                width: 100%;
             }
 
             .language-switcher {
@@ -406,7 +410,7 @@
 
         <!-- Search Bar Section -->
         <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Search for products, terms, help, refund policy">
+            <input type="text" class="search-input" placeholder="Search...">
             <button class="search-button" onclick="searchRedirect()">Search</button>
         </div>
 
@@ -486,7 +490,7 @@
             } else if (hours < 18) {
                 greeting = 'Good afternoon!';
             } else {
-                greeting = 'Good Night!';
+                greeting = 'Good night!';
             }
             return greeting;
         }
