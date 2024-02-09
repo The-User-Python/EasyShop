@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment - EasyShop.com</title>
+    <title>Secure Payment - EasyShop.com</title>
     <style>
         body {
             font-family: 'Trebuchet MS', sans-serif;
@@ -26,6 +27,7 @@
         h1 {
             color: #333;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
         }
 
         .payment-details {
@@ -64,6 +66,14 @@
         .refund-link:hover {
             text-decoration: underline;
         }
+
+        .security-info {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e74c3c;
+            color: #fff;
+            border-radius: 5px;
+        }
     </style>
     <script>
         function handleRefundLinkClick() {
@@ -72,20 +82,24 @@
         }
     </script>
 </head>
+
 <body>
 
     <div class="container">
 
-        <h1>Payment</h1>
+        <h1>Secure Payment</h1>
 
         <div class="payment-details">
 
-            <div class="qr-code" style="background-image: url('qr_code.jpg');"></div>
+            <div class="qr-code" style="background-image: url('enhanced_qr_code.jpg');"></div>
 
             <div class="payment-info">
-                <p class="description">Complete your purchase by scanning the QR code with your preferred payment app. Ensure a secure and seamless transaction.</p>
+                <p class="description">Complete your purchase securely by scanning the updated QR code with your preferred payment app. Our enhanced security measures protect against hackers and phishers.</p>
 
-                <p>For more information on our refund policy, please visit the <a href="refund.html" class="refund-link" onclick="handleRefundLinkClick()">Refund Policy</a> page.</p>
+                <p>For more information on our refund policy, please visit the <a href="refund.html" class="refund-link"
+                        onclick="handleRefundLinkClick()">Refund Policy</a> page.</p>
+
+                <div class="security-info">Your payment is encrypted and secure. Trust EasyShop for a worry-free shopping experience.</div>
             </div>
 
         </div>
@@ -93,4 +107,5 @@
     </div>
 
 </body>
+
 </html>
