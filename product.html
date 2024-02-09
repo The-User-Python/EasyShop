@@ -6,10 +6,10 @@
     <title>EasyShop.com - Products</title>
     <style>
         body {
-            font-family: 'Trebuchet MS', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #f5f5f5;
             color: #333;
         }
 
@@ -17,6 +17,9 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         h1, h2, h3 {
@@ -26,21 +29,26 @@
         .product-item {
             background-color: #fff;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
             margin-bottom: 20px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-item:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         .item-image {
             height: 200px;
             background-size: cover;
             background-position: center;
+            border-bottom: 1px solid #ddd;
         }
 
         .item-category {
@@ -53,6 +61,7 @@
         .item-description {
             padding: 15px;
             color: #555;
+            flex: 1;
         }
 
         .view-button {
@@ -67,6 +76,8 @@
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
+            border-top: 1px solid #ddd;
+            border-radius: 0 0 10px 10px;
         }
 
         .view-button:hover {
