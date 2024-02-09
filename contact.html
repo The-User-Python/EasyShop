@@ -7,7 +7,7 @@
     <title>EasyShop.com - Contact Us</title>
     <style>
         body {
-            font-family: 'Trebuchet MS', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f8f8f8;
@@ -19,7 +19,7 @@
             margin: 0 auto;
             padding: 40px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             text-align: center;
         }
@@ -28,23 +28,25 @@
         h2,
         h3 {
             color: #333;
+            margin-bottom: 15px;
         }
 
         .contact-info {
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s;
         }
 
         .contact-info:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         .description {
             margin-bottom: 20px;
             color: #555;
+            line-height: 1.6;
         }
 
         h2 {
@@ -55,6 +57,7 @@
         a {
             color: #007BFF;
             text-decoration: none;
+            transition: text-decoration 0.3s;
         }
 
         a:hover {
@@ -64,6 +67,11 @@
         .mail-info {
             margin-top: 10px;
             color: #555;
+            line-height: 1.6;
+        }
+
+        .mail-system {
+            margin-top: 30px;
         }
     </style>
     <script>
@@ -80,21 +88,21 @@
         <h1>Contact Us</h1>
 
         <div class="contact-info">
-            <p class="description">Have questions or concerns? We're here to help! Reach out to us via email or phone, and our team will get back to you as soon as possible.</p>
+            <p class="description">Do you have questions or concerns? We're here to help! Reach out to us via email or phone, and our dedicated team will respond promptly to assist you.</p>
 
             <h2>Email:</h2>
-            <p>For general inquiries: <a href="javascript:void(0);" onclick="openMailClient('handedaksh@gmail.com')">info@easyshop.com</a></p>
+            <p>General inquiries: <a href="javascript:void(0);" onclick="openMailClient('handedaksh@gmail.com')">info@easyshop.com</a></p>
             <p>Customer support: <span style="cursor: pointer;" onclick="openMailClient('handedaksh@gmail.com')">support@easyshop.com</span></p>
             <p>Customer support phone: <span style="cursor: pointer;" onclick="alert('Customer Support Phone: +91(8103356828)')">+91(8103356828)</span></p>
 
             <div class="mail-system">
                 <h2>Mail System:</h2>
-                <p class="mail-info">Our team reviews emails regularly. Please allow up to 48 hours for a response. If your matter is urgent, consider reaching out to our customer support directly.</p>
+                <p class="mail-info">Our dedicated team reviews emails regularly. Please allow up to 48 hours for a response. For urgent matters, contact our customer support directly.</p>
             </div>
 
             <div class="mail-system">
                 <h2>Refund Policy:</h2>
-                <p class="mail-info">Before contacting us, make sure to check our <a href="refund.html">Refund Policy</a>.</p>
+                <p class="mail-info">Before reaching out, please review our <a href="refund.html">Refund Policy</a> for important information.</p>
             </div>
         </div>
 
