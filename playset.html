@@ -17,6 +17,9 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
         h1 {
@@ -33,49 +36,52 @@
         }
 
         .product-image {
-            width: 300px;
+            width: 100%;
+            max-width: 500px;
             height: 300px; /* Set your preferred height */
             background-size: cover;
             background-position: center;
-            margin-right: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .product-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.08);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
         }
 
         .product-info {
             flex: 1;
+            padding: 0 20px;
         }
 
         p {
             margin-bottom: 20px;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .price {
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 28px;
+            margin-bottom: 15px;
             color: #333;
+            font-weight: bold;
         }
 
         .availability {
             color: #008000; /* Green color for availability */
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .buy-now {
             background-color: #ffcc00;
-            padding: 15px;
+            padding: 18px;
             text-align: center;
             color: #333;
             text-decoration: none;
             display: block;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -84,6 +90,41 @@
         .buy-now:hover {
             background-color: #555;
             color: #fff;
+        }
+
+        /* Additional Styling */
+        .additional-features {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffcc00;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .star {
+            color: #ffcc00;
+            margin-right: 7px;
+        }
+
+        /* Detailed Description */
+        .detailed-description {
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -105,11 +146,32 @@
                 <div class="availability">Availability: In Stock (✔)</div>
 
                 <a href="payment.html" class="buy-now">Buy Now</a>
+
+                <!-- Additional Features -->
+                <div class="additional-features">
+                    <div class="social-icons">
+                        <a href="#" target="_blank">Share on Facebook</a>
+                        <a href="#" target="_blank">Tweet</a>
+                        <a href="#" target="_blank">Pin it</a>
+                    </div>
+
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <!-- Add more stars as needed -->
+                    </div>
+                </div>
+
+                <!-- Detailed Description -->
+                <div class="detailed-description">
+                    <h2>Detailed Description</h2>
+                    <p>Further details about the Fun Play Set. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
             </div>
-
         </div>
-
     </div>
-
 </body>
 </html>
