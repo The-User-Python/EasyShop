@@ -300,6 +300,33 @@
                 width: 100%;
             }
         }
+
+        /* Footer Styles */
+        .footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffcc00;
+        }
     </style>
 </head>
 
@@ -428,8 +455,13 @@
         <!-- Scroll to Top Section -->
         <div class="scroll-to-top" onclick="scrollToTop()">Scroll to Top</div>
 
-        <!-- Copyright Section -->
-        <div class="copyright">
+        <!-- Copyright and Footer Section -->
+        <div class="footer">
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
             &copy; 2024 EasyShop.com. All Rights Reserved.
         </div>
 
