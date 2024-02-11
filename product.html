@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f8f8f8;
             color: #333;
         }
 
@@ -37,6 +37,7 @@
             width: 300px;
             display: flex;
             flex-direction: column;
+            cursor: pointer;
         }
 
         .product-item:hover {
@@ -49,6 +50,7 @@
             background-size: cover;
             background-position: center;
             border-bottom: 1px solid #ddd;
+            border-radius: 10px 10px 0 0;
         }
 
         .item-category {
@@ -56,18 +58,21 @@
             background-color: #ffcc00;
             color: #333;
             font-weight: bold;
+            border-radius: 0 0 10px 10px;
+            text-align: center;
         }
 
         .item-description {
             padding: 15px;
             color: #555;
             flex: 1;
+            text-align: justify;
         }
 
         .view-button {
             display: block;
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             text-align: center;
             background-color: #333;
             color: #fff;
@@ -76,7 +81,6 @@
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
-            border-top: 1px solid #ddd;
             border-radius: 0 0 10px 10px;
         }
 
@@ -115,6 +119,22 @@
             <div class="item-description">Find practical and useful items that make your daily life easier. From kitchen gadgets to innovative tools, our collection is designed to enhance your lifestyle.</div>
             <a href="#" class="view-button">View Item</a>
         </div>
+
+        <div class="product-item" onclick="logItemClick('Books')">
+            <div class="item-image" style="background-image: url('books.jpg');"></div>
+            <div class="item-category">Books</div>
+            <div class="item-description">Dive into captivating stories and insightful knowledge with our diverse collection of books. Explore various genres to satisfy your literary cravings.</div>
+            <a href="#" class="view-button">View Item</a>
+        </div>
+
+        <div class="product-item" onclick="logItemClick('Bags')">
+            <div class="item-image" style="background-image: url('bags.jpg');"></div>
+            <div class="item-category">Bags</div>
+            <div class="item-description">Carry your essentials in style with our fashionable and functional bags. Whether for work or leisure, our collection offers trendy options for every occasion.</div>
+            <a href="#" class="view-button">View Item</a>
+        </div>
+
+        <!-- Add more product items with similar structure -->
 
     </div>
 
