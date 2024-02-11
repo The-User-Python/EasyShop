@@ -7,10 +7,10 @@
     <title>Secure Payment - EasyShop.com</title>
     <style>
         body {
-            font-family: 'Trebuchet MS', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #f5f5f5;
             color: #333;
         }
 
@@ -19,15 +19,15 @@
             margin: 0 auto;
             padding: 40px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
             text-align: center;
         }
 
         h1 {
-            color: #333;
+            color: #3498db;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .payment-details {
@@ -43,8 +43,8 @@
             background-size: cover;
             background-position: center;
             margin-right: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
         .payment-info {
@@ -58,7 +58,7 @@
         }
 
         .refund-link {
-            color: #ffcc00;
+            color: #e74c3c;
             text-decoration: none;
             font-weight: bold;
         }
@@ -69,16 +69,35 @@
 
         .security-info {
             margin-top: 20px;
-            padding: 10px;
-            background-color: #e74c3c;
+            padding: 15px;
+            background-color: #2ecc71;
             color: #fff;
-            border-radius: 5px;
+            border-radius: 8px;
+        }
+
+        .additional-feature {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #3498db;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .additional-content {
+            display: none;
+            margin-top: 20px;
+            color: #777;
         }
     </style>
     <script>
         function handleRefundLinkClick() {
             alert("For more information on our refund policy, please visit the Refund Policy page.");
             // You can redirect the user to the refund page or add custom logic here.
+        }
+
+        function toggleAdditionalContent() {
+            var additionalContent = document.querySelector('.additional-content');
+            additionalContent.style.display = additionalContent.style.display === 'none' ? 'block' : 'none';
         }
     </script>
 </head>
@@ -99,7 +118,14 @@
                 <p>For more information on our refund policy, please visit the <a href="refund.html" class="refund-link"
                         onclick="handleRefundLinkClick()">Refund Policy</a> page.</p>
 
-                <div class="security-info">Your payment is encrypted and secure. Trust EasyShop for a worry-free shopping experience.</div>
+                <div class="security-info">Your payment is encrypted and secure. Trust EasyShop for a worry-free shopping experience. We value your security and confidentiality.</div>
+
+                <div class="additional-feature" onclick="toggleAdditionalContent()">Additional Features</div>
+
+                <div class="additional-content">
+                    <p>Explore our new features, including real-time transaction updates and personalized security settings.</p>
+                    <p>For assistance, contact our 24/7 customer support at support@easyshop.com.</p>
+                </div>
             </div>
 
         </div>
