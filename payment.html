@@ -10,8 +10,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f8f8f8;
             color: #333;
+            line-height: 1.6;
         }
 
         .container {
@@ -21,7 +22,7 @@
             background-color: #fff;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
-            text-align: center;
+            text-align: left;
         }
 
         h1 {
@@ -32,7 +33,7 @@
 
         .payment-details {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
@@ -42,14 +43,13 @@
             height: 300px;
             background-size: cover;
             background-position: center;
-            margin-right: 20px;
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
         .payment-info {
             flex: 1;
-            text-align: left;
+            padding-left: 40px;
         }
 
         .description {
@@ -88,6 +88,18 @@
             margin-top: 20px;
             color: #777;
         }
+
+        @media (max-width: 600px) {
+            .payment-details {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .qr-code {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
     </style>
     <script>
         function handleRefundLinkClick() {
@@ -106,25 +118,25 @@
 
     <div class="container">
 
-        <h1>Secure Payment</h1>
+        <h1>Experience Secure Payment with EasyShop</h1>
 
         <div class="payment-details">
 
             <div class="qr-code" style="background-image: url('enhanced_qr_code.jpg');"></div>
 
             <div class="payment-info">
-                <p class="description">Complete your purchase securely by scanning the updated QR code with your preferred payment app. Our enhanced security measures protect against hackers and phishers.</p>
+                <p class="description">Embark on a seamless and secure shopping journey with EasyShop's enhanced payment process. Simply scan the updated QR code using your preferred payment app to complete your purchase.</p>
 
-                <p>For more information on our refund policy, please visit the <a href="refund.html" class="refund-link"
+                <p>For a detailed overview of our refund policy, please explore the <a href="refund.html" class="refund-link"
                         onclick="handleRefundLinkClick()">Refund Policy</a> page.</p>
 
-                <div class="security-info">Your payment is encrypted and secure. Trust EasyShop for a worry-free shopping experience. We value your security and confidentiality.</div>
+                <div class="security-info">Rest easy knowing your payment is encrypted and secure. Trust EasyShop for a worry-free shopping experience. We prioritize your security and confidentiality.</div>
 
-                <div class="additional-feature" onclick="toggleAdditionalContent()">Additional Features</div>
+                <div class="additional-feature" onclick="toggleAdditionalContent()">Unlock Additional Features</div>
 
                 <div class="additional-content">
-                    <p>Explore our new features, including real-time transaction updates and personalized security settings.</p>
-                    <p>For assistance, contact our 24/7 customer support at support@easyshop.com.</p>
+                    <p>Discover the latest features, including real-time transaction updates and personalized security settings, to enhance your shopping experience.</p>
+                    <p>Need assistance? Our 24/7 customer support team is ready to help. Reach out at support@easyshop.com.</p>
                 </div>
             </div>
 
