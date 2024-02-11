@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Building Block - EasyShop.com</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-details {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 500px;
+            height: 300px; /* Set your preferred height */
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-image:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-info {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .price {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: bold;
+            color: #e60000; /* Red color for price */
+        }
+
+        .availability {
+            color: #e60000; /* Red color for not available */
+            margin-bottom: 25px;
+            text-decoration: line-through;
+        }
+
+        /* Additional Styling */
+        .additional-features {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffcc00;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .star {
+            color: #ffcc00;
+            margin-right: 7px;
+        }
+
+        /* Detailed Description */
+        .detailed-description {
+            margin-top: 40px;
+        }
+
+        /* Remove Buy Now */
+        .buy-now {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Creative Building Block</h1>
+
+        <div class="product-details">
+
+            <div class="product-image" style="background-image: url('creative_building_block.jpg');"></div>
+
+            <div class="product-info">
+                <p>Description of the Creative Building Block. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <div class="price">Price: ₹250</div>
+
+                <div class="availability">Not Available (✘)</div>
+
+                <!-- Additional Features -->
+                <div class="additional-features">
+                    <div class="social-icons">
+                        <a href="#" target="_blank">Share on Facebook</a>
+                        <a href="#" target="_blank">Tweet</a>
+                        <a href="#" target="_blank">Pin it</a>
+                    </div>
+
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <!-- Add more stars as needed -->
+                    </div>
+                </div>
+
+                <!-- Detailed Description -->
+                <div class="detailed-description">
+                    <h2>Detailed Description</h2>
+                    <p>Further details about the Creative Building Block. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
