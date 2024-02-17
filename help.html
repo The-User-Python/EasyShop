@@ -6,27 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyShop.com - Help</title>
     <style>
+        /* Enhanced styling */
         body {
             font-family: 'Trebuchet MS', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f8f8f8;
             color: #333;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            padding: 40px;
+            padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-        }
-
-        h1, h2, h3 {
-            color: #333;
         }
 
         .header {
@@ -36,6 +32,10 @@
             border-bottom: 2px solid #000;
             border-radius: 10px 10px 0 0;
             margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
         }
 
         h2 {
@@ -51,6 +51,7 @@
         .link-container {
             display: flex;
             flex-direction: column;
+            margin-bottom: 20px;
         }
 
         .nav-link {
@@ -69,7 +70,7 @@
             background-color: #555;
         }
 
-        #backToTopBtn {
+        .chat-widget {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -79,31 +80,178 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            display: none;
             transition: background-color 0.3s;
+            z-index: 1000; /* Ensure it's above other elements */
         }
 
-        #backToTopBtn:hover {
+        .chat-widget:hover {
             background-color: #555;
+        }
+
+        /* Chat interface styling */
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 400px; /* Increased width */
+            max-height: 500px;
+            overflow-y: auto;
+            z-index: 1000; /* Ensure it's above other elements */
+            display: none;
+        }
+
+        .chat-header {
+            background-color: #ffcc00;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .chat-messages {
+            padding: 15px;
+            min-height: 200px;
+        }
+
+        .user-message, .bot-message {
+            background-color: #f0f0f0;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .bot-message {
+            background-color: #e1f7d5;
+        }
+
+        .chat-input {
+            width: calc(100% - 30px);
+            padding: 10px;
+            border: none;
+            border-top: 1px solid #ccc;
+            border-radius: 0 0 10px 10px;
+            resize: none;
+            outline: none;
+        }
+
+        .message-time {
+            font-size: 0.8em;
+            color: #999;
+            margin-top: 5px;
+            text-align: right;
         }
     </style>
     <script>
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Array of inappropriate words
+        var inappropriateWords = ["fuck", "asshole", "bitch", "18+", "sex"];
+
+        // Variable to track last time an inappropriate word was used
+        var lastInappropriateWordTime = 0;
+
+        // Chat functionality
+        function toggleChat() {
+            var chatContainer = document.getElementById("chat-container");
+            chatContainer.style.display === "none" ? (chatContainer.style.display = "block", displayBotMessage("Welcome to EasyShop.com! Please follow our chat etiquette: Be respectful, avoid inappropriate language, and provide clear and concise messages.")) : chatContainer.style.display = "none";
         }
 
-        function handleScroll() {
-            const backToTopBtn = document.getElementById('backToTopBtn');
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
+        function handleUserInput(event) {
+            if (event.key === "Enter") {
+                var userInput = event.target.value.trim().toLowerCase(); // Convert input to lowercase and trim whitespace
+                if (userInput !== "") {
+                    displayUserMessage(userInput);
+                    getBotResponse(userInput);
+                    event.target.value = ""; // Clear input field
+                }
             }
         }
 
-        window.onscroll = function () {
-            handleScroll();
-        };
+        function displayUserMessage(message) {
+            var chatMessages = document.getElementById("chat-messages");
+            var userMessageElement = document.createElement("div");
+            userMessageElement.className = "user-message";
+            userMessageElement.innerHTML = message + "<div class='message-time'>" + getCurrentTime() + "</div>";
+            chatMessages.appendChild(userMessageElement);
+            // Scroll to bottom of chat container
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function displayBotMessage(message) {
+            var chatMessages = document.getElementById("chat-messages");
+            var botMessageElement = document.createElement("div");
+            botMessageElement.className = "bot-message";
+            botMessageElement.innerHTML = message + "<div class='message-time'>" + getCurrentTime() + "</div>";
+            chatMessages.appendChild(botMessageElement);
+            // Scroll to bottom of chat container
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getCurrentTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            // Add leading zero if minutes is less than 10
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            return hours + ":" + minutes;
+        }
+
+        function getBotResponse(userInput) {
+            // Check for inappropriate words and set timer
+            if (checkForInappropriateWords(userInput)) {
+                displayBotMessage("Please refrain from using inappropriate language. Your message will be removed in 5 minutes.");
+                // Set timer to remove inappropriate message after 5 minutes
+                setTimeout(function() {
+                    removeInappropriateMessage();
+                }, 300000); // 5 minutes in milliseconds
+                return;
+            }
+
+            // Placeholder function for bot response based on user input
+            var botResponse;
+            if (userInput.includes("help!")) {
+                botResponse = "Please visit Contact page from here <a href='contact.html'>Contact Page.";
+            } else if (userInput.includes("payment")) {
+                botResponse = "For payment-related queries, you can visit our <a href='payment.html'>payment page . We ensure safe payemt system and refund policy to our customers</a>.";
+            } else if (userInput.includes("products")) {
+                botResponse = "Here are some of our featured products: <ul><li>Toys</li><li>Homemade Items</li><li>Usefull Items</li></ul>";
+            } else if (userInput.includes("currency")) {
+                botResponse = "Currently, we only accept ₹ (Indian Rupee) as currency.";
+            } else if (userInput.includes("hi") || userInput.includes("hello")) {
+                botResponse = "Hello! How can I assist you today?";
+            } else {
+                botResponse = "Thank you for contacting EasyShop.com! How can we assist you today?";
+            }
+            displayBotMessage(botResponse);
+        }
+
+        function checkForInappropriateWords(userInput) {
+            var currentTime = new Date().getTime();
+            if (currentTime - lastInappropriateWordTime < 300000) { // 5 minutes in milliseconds
+                return true; // Inappropriate word used within last 5 minutes
+            }
+            for (var i = 0; i < inappropriateWords.length; i++) {
+                if (userInput.includes(inappropriateWords[i])) {
+                    lastInappropriateWordTime = currentTime;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function removeInappropriateMessage() {
+            var chatMessages = document.getElementById("chat-messages");
+            var messages = chatMessages.getElementsByClassName("user-message");
+            for (var i = messages.length - 1; i >= 0; i--) {
+                if (messages[i].innerText.toLowerCase().includes(inappropriateWords[0]) ||
+                    messages[i].innerText.toLowerCase().includes(inappropriateWords[1]) ||
+                    messages[i].innerText.toLowerCase().includes(inappropriateWords[2]) ||
+                    messages[i].innerText.toLowerCase().includes(inappropriateWords[3]) ||
+                    messages[i].innerText.toLowerCase().includes(inappropriateWords[4])) {
+                    messages[i].remove();
+                    break; // Remove only one message
+                }
+            }
+        }
     </script>
 </head>
 
@@ -118,14 +266,26 @@
 
         <h2>Help Center</h2>
 
-        <p>At EasyShop.com, our commitment to customer satisfaction goes beyond just providing great products. Our Help Center is designed to assist you in navigating through any questions or concerns you may encounter during your shopping journey. Whether you're curious about our ordering process, tracking your shipments, or understanding our policies, you'll find valuable information below. If you need further assistance, feel free to reach out to our dedicated support team.</p>
+        <p><strong>Welcome to EasyShop.com Help Center!</strong> Our commitment to customer satisfaction goes beyond just providing great products. Our Help Center is designed to assist you in navigating through any questions or concerns you may encounter during your shopping journey. Whether you're curious about our ordering process, tracking your shipments, understanding our policies, or need further assistance, feel free to reach out to our dedicated support team.</p>
 
         <div class="link-container">
             <a class="nav-link" href="contact.html">Contact Us</a>
             <a class="nav-link" href="refund.html">Refund Policy</a>
         </div>
 
-        <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
+        <!-- Chat widget button -->
+        <button class="chat-widget" onclick="toggleChat()">Need Help?</button>
+
+        <!-- Chat interface -->
+        <div id="chat-container" class="chat-container">
+            <div class="chat-header">
+                <h3>Chat with Us</h3>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <!-- Chat messages will be displayed here -->
+            </div>
+            <input type="text" class="chat-input" placeholder="Type your message..." onkeyup="handleUserInput(event)">
+        </div>
 
     </div>
 
