@@ -10,16 +10,16 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #f8f8f8, #e0e0e0); /* Soft gradient background */
+            background: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
             color: #333;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px; /* Increased max-width for a wider layout */
+            max-width: 800px;
             margin: 0 auto;
             padding: 40px;
-            background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+            background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
             text-align: center;
@@ -28,7 +28,6 @@
         h1, h2, h3 {
             color: #333;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin-bottom: 15px;
         }
 
         .policy-header {
@@ -41,24 +40,17 @@
 
         .policy-description {
             margin-top: 20px;
+            margin-bottom: 30px;
             color: #555;
             line-height: 1.6;
         }
 
         .policy-content {
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid #ddd;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s, transform 0.5s; /* Added transform transition */
             margin-bottom: 20px;
-            transform-style: preserve-3d; /* Required for 3D transformation */
-        }
-
-        .policy-content:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            transform: rotateY(10deg) rotateX(5deg); /* 3D transformation */
         }
 
         .policy-topic, .policy-text {
@@ -73,7 +65,7 @@
         }
 
         .policy-text {
-            background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+            background-color: rgba(255, 255, 255, 0.95);
             color: #555;
             line-height: 1.6;
         }
@@ -101,14 +93,13 @@
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+            transition: background-color 0.3s;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .contact-button:hover {
             background-color: #ffa500;
             color: #fff;
-            transform: translateY(-5px); /* Button lift effect */
         }
 
         .hidden {
@@ -124,101 +115,160 @@
             text-decoration: none;
             font-size: 24px;
             margin: 0 15px;
-            transition: transform 0.3s; /* Added transform transition */
+            transition: color 0.3s;
         }
 
         .social-icons a:hover {
             color: #ffcc00;
-            transform: scale(1.2); /* Icon zoom effect */
         }
 
         .language-selector {
-            margin-top: 30px;
-            text-align: center;
+            margin-top: 40px;
         }
 
-        .language-selector select {
+        .language-selector h2 {
+            font-weight: bold;
+        }
+
+        #languageSelect {
             padding: 10px;
+            border-radius: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        #languageSelect:hover {
+            border-color: #ffcc00;
         }
     </style>
     <script>
-        function toggleContactInfo() {
-            var contactInfo = document.getElementById("contactInfo");
-            contactInfo.classList.toggle("hidden");
-        }
-
         function changeLanguage() {
-            var select = document.getElementById("languageSelect");
-            var language = select.options[select.selectedIndex].value;
-            localStorage.setItem("language", language);
-            location.reload(); // Reload the page to apply the selected language
-        }
+            var language = document.getElementById("languageSelect").value;
+            var content = {};
 
-        // Function to initialize the language selection based on stored preference
-        function initLanguage() {
-            var storedLanguage = localStorage.getItem("language");
-            if (storedLanguage) {
-                var select = document.getElementById("languageSelect");
-                select.value = storedLanguage;
+            if (language === "en") {
+                content = {
+                    header: "Refund Policy",
+                    description: "Transparent guidelines to ensure your satisfaction",
+                    topics: [
+                        "International Transactions",
+                        "Damaged Products",
+                        "Non-Reception of Products"
+                    ],
+                    texts: [
+                        "In the event of an international transaction, any refunded money will be adjusted directly. Unfortunately, international transactions are non-refundable.",
+                        "If a product arrives damaged due to our negligence, we will promptly refund your money. The damaged product, however, is yours to keep.",
+                        "If you fail to receive a product, we commit to returning your money within a 24-hour period. Your satisfaction is our top priority, and we aim to resolve any issues swiftly."
+                    ],
+                    contactHeader: "Contact Information",
+                    contactDescription: "If you have any further questions or concerns regarding our refund policy, feel free to reach out to us. We are here to assist you!",
+                    customerSupport: "Customer Support",
+                    generalInquiries: "General Inquiries",
+                    supportEmail: "support@easyshop.com",
+                    infoEmail: "info@easyshop.com",
+                    connectHeader: "Connect with Us"
+                };
+            } else if (language === "es") {
+                content = {
+                    header: "Política de Reembolso",
+                    description: "Directrices transparentes para garantizar su satisfacción",
+                    topics: [
+                        "Transacciones Internacionales",
+                        "Productos Dañados",
+                        "No Recepción de Productos"
+                    ],
+                    texts: [
+                        "En caso de una transacción internacional, cualquier dinero reembolsado se ajustará directamente. Desafortunadamente, las transacciones internacionales no son reembolsables.",
+                        "Si un producto llega dañado debido a nuestra negligencia, le reembolsaremos su dinero de inmediato. Sin embargo, el producto dañado es suyo para quedarse.",
+                        "Si no recibe un producto, nos comprometemos a devolverle su dinero dentro de un período de 24 horas. Su satisfacción es nuestra principal prioridad, y nuestro objetivo es resolver cualquier problema rápidamente."
+                    ],
+                    contactHeader: "Información de Contacto",
+                    contactDescription: "Si tiene más preguntas o inquietudes sobre nuestra política de reembolso, no dude en comunicarse con nosotros. ¡Estamos aquí para ayudarlo!",
+                    customerSupport: "Soporte al Cliente",
+                    generalInquiries: "Consultas Generales",
+                    supportEmail: "soporte@easyshop.com",
+                    infoEmail: "informacion@easyshop.com",
+                    connectHeader: "Conéctese con Nosotros"
+                };
+            }
+            
+            // Update content
+            document.getElementById("policyHeader").innerText = content.header;
+            document.getElementById("policyDescription").innerText = content.description;
+            document.getElementById("contactHeader").innerText = content.contactHeader;
+            document.getElementById("contactDescription").innerText = content.contactDescription;
+            document.getElementById("customerSupport").innerText = content.customerSupport;
+            document.getElementById("generalInquiries").innerText = content.generalInquiries;
+            document.getElementById("supportEmail").innerText = content.supportEmail;
+            document.getElementById("infoEmail").innerText = content.infoEmail;
+            document.getElementById("connectHeader").innerText = content.connectHeader;
+
+            // Update policy topics and texts
+            var topics = document.getElementsByClassName("policy-topic");
+            var texts = document.getElementsByClassName("policy-text");
+
+            for (var i = 0; i < topics.length; i++) {
+                topics[i].innerText = content.topics[i];
+                texts[i].innerText = content.texts[i];
             }
         }
     </script>
 </head>
-<body onload="initLanguage()">
+<body>
 
     <div class="container">
 
         <div class="policy-header">
-            <h1 class="highlight">Refund Policy</h1>
-            <p>Transparent guidelines to ensure your satisfaction</p>
+            <h1 id="policyHeader">Refund Policy</h1>
+            <p id="policyDescription">Transparent guidelines to ensure your satisfaction</p>
         </div>
 
         <div class="policy-description">
-            <p>At EasyShop.com, we value your trust and satisfaction. Our refund policy is designed to provide clarity and fairness in case you encounter any issues with your purchase. We strive to make your shopping experience smooth and enjoyable.</p>
+            <p>In the event of an international transaction, any refunded money will be adjusted directly. Unfortunately, international transactions are non-refundable.</p>
+            <p>If a product arrives damaged due to our negligence, we will promptly refund your money. The damaged product, however, is yours to keep.</p>
+            <p>If you fail to receive a product, we commit to returning your money within a 24-hour period. Your satisfaction is our top priority, and we aim to resolve any issues swiftly.</p>
         </div>
 
         <div class="policy-content">
             <!-- Refund Policy Items -->
-            <div class="policy-topic">1. International Transactions</div>
+            <div class="policy-topic">1. <span id="topic1">International Transactions</span></div>
             <div class="policy-text">
-                <p>In the event of an international transaction, any refunded money will be adjusted directly. Unfortunately, international transactions are non-refundable.</p>
+                <p id="text1">In the event of an international transaction, any refunded money will be adjusted directly. Unfortunately, international transactions are non-refundable.</p>
             </div>
 
-            <div class="policy-topic">2. Damaged Products</div>
+            <div class="policy-topic">2. <span id="topic2">Damaged Products</span></div>
             <div class="policy-text">
-                <p>If a product arrives damaged due to our negligence, we will promptly refund your money. The damaged product, however, is yours to keep.</p>
+                <p id="text2">If a product arrives damaged due to our negligence, we will promptly refund your money. The damaged product, however, is yours to keep.</p>
             </div>
 
-            <div class="policy-topic">3. Non-Reception of Products</div>
+            <div class="policy-topic">3. <span id="topic3">Non-Reception of Products</span></div>
             <div class="policy-text">
-                <p>If you fail to receive a product, we commit to returning your money within a 24-hour period. Your satisfaction is our top priority, and we aim to resolve any issues swiftly.</p>
+                <p id="text3">If you fail to receive a product, we commit to returning your money within a 24-hour period. Your satisfaction is our top priority, and we aim to resolve any issues swiftly.</p>
             </div>
         </div>
 
         <div class="contact-info">
-            <h2>Contact Information</h2>
-            <p>If you have any further questions or concerns regarding our refund policy, feel free to reach out to us. We are here to assist you!</p>
+            <h2 id="contactHeader">Contact Information</h2>
+            <p id="contactDescription">If you have any further questions or concerns regarding our refund policy, feel free to reach out to us. We are here to assist you!</p>
             <button class="contact-button" onclick="toggleContactInfo()">Contact Us</button>
             <div id="contactInfo" class="hidden">
                 <div class="contact-emails">
                     <div class="email">
-                        <h3>Customer Support</h3>
-                        <p>Email: support@easyshop.com</p>
+                        <h3 id="customerSupport">Customer Support</h3>
+                        <p>Email: <span id="supportEmail">support@easyshop.com</span></p>
                     </div>
                     <div class="email">
-                        <h3>General Inquiries</h3>
-                        <p>Email: info@easyshop.com</p>
+                        <h3 id="generalInquiries">General Inquiries</h3>
+                        <p>Email: <span id="infoEmail">info@easyshop.com</span></p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="social-icons">
-            <h2>Connect with Us</h2>
+            <h2 id="connectHeader">Connect with Us</h2>
             <a href="#" class="fab fa-facebook-f"></a>
             <a href="#" class="fab fa-twitter"></a>
             <a href="#" class="fab fa-instagram"></a>
@@ -226,14 +276,10 @@
         </div>
 
         <div class="language-selector">
-            <h2>Language</h2>
+            <h2>Language Selector</h2>
             <select id="languageSelect" onchange="changeLanguage()">
                 <option value="en">English</option>
                 <option value="es">Spanish</option>
-                <option value="fr">French</option>
-                <option value="de">German</option>
-                <option value="it">Italian</option>
-                <option value="pt">Portuguese</option>
             </select>
         </div>
 
