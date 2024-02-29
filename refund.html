@@ -16,19 +16,19 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px; /* Increased max-width for a wider layout */
             margin: 0 auto;
             padding: 40px;
             background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
             text-align: center;
-            position: relative; /* Required for 3D transformation */
         }
 
         h1, h2, h3 {
             color: #333;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 15px;
         }
 
         .policy-header {
@@ -131,15 +131,44 @@
             color: #ffcc00;
             transform: scale(1.2); /* Icon zoom effect */
         }
+
+        .language-selector {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .language-selector select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
     <script>
         function toggleContactInfo() {
             var contactInfo = document.getElementById("contactInfo");
             contactInfo.classList.toggle("hidden");
         }
+
+        function changeLanguage() {
+            var select = document.getElementById("languageSelect");
+            var language = select.options[select.selectedIndex].value;
+            localStorage.setItem("language", language);
+            location.reload(); // Reload the page to apply the selected language
+        }
+
+        // Function to initialize the language selection based on stored preference
+        function initLanguage() {
+            var storedLanguage = localStorage.getItem("language");
+            if (storedLanguage) {
+                var select = document.getElementById("languageSelect");
+                select.value = storedLanguage;
+            }
+        }
     </script>
 </head>
-<body>
+<body onload="initLanguage()">
 
     <div class="container">
 
@@ -194,6 +223,18 @@
             <a href="#" class="fab fa-twitter"></a>
             <a href="#" class="fab fa-instagram"></a>
             <a href="#" class="fab fa-linkedin-in"></a>
+        </div>
+
+        <div class="language-selector">
+            <h2>Language</h2>
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+            </select>
         </div>
 
     </div>
