@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyShop.com - Products</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f8f8f8;
             color: #333;
+            transition: background-color 0.5s;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
+            gap: 20px;
         }
 
         h1, h2, h3 {
             color: #333;
+            margin-bottom: 10px;
         }
 
         .product-item {
@@ -33,10 +37,7 @@
             overflow: hidden;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-            margin-bottom: 20px;
-            width: 300px;
-            display: flex;
-            flex-direction: column;
+            width: calc(33.33% - 20px);
             cursor: pointer;
         }
 
@@ -65,7 +66,6 @@
         .item-description {
             padding: 15px;
             color: #555;
-            flex: 1;
             text-align: justify;
         }
 
@@ -87,6 +87,18 @@
         .view-button:hover {
             background-color: #555;
         }
+
+        @media only screen and (max-width: 1024px) {
+            .product-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .product-item {
+                width: calc(100% - 20px);
+            }
+        }
     </style>
     <script>
         function logItemClick(category) {
@@ -97,46 +109,46 @@
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="product-item" onclick="logItemClick('Toys')">
-            <div class="item-image" style="background-image: url('toys.jpg');"></div>
-            <div class="item-category">Toys</div>
-            <div class="item-description">Explore our delightful collection of toys for all ages. From educational toys to fun playtime companions, we have something for every child.</div>
-            <a href="toys.html" class="view-button">View Item</a>
-        </div>
-
-        <div class="product-item" onclick="logItemClick('Home-made Items')">
-            <div class="item-image" style="background-image: url('homemade.jpg');"></div>
-            <div class="item-category">Home-made Items</div>
-            <div class="item-description">Discover the charm of handcrafted, home-made items. Each piece tells a story and adds a personal touch to your home. Browse our unique selection.</div>
-            <a href="#" class="view-button">View Item</a>
-        </div>
-
-        <div class="product-item" onclick="logItemClick('Useful Items')">
-            <div class="item-image" style="background-image: url('useful.jpg');"></div>
-            <div class="item-category">Useful Items</div>
-            <div class="item-description">Find practical and useful items that make your daily life easier. From kitchen gadgets to innovative tools, our collection is designed to enhance your lifestyle.</div>
-            <a href="#" class="view-button">View Item</a>
-        </div>
-
-        <div class="product-item" onclick="logItemClick('Books')">
-            <div class="item-image" style="background-image: url('books.jpg');"></div>
-            <div class="item-category">Books</div>
-            <div class="item-description">Dive into captivating stories and insightful knowledge with our diverse collection of books. Explore various genres to satisfy your literary cravings.</div>
-            <a href="#" class="view-button">View Item</a>
-        </div>
-
-        <div class="product-item" onclick="logItemClick('Bags')">
-            <div class="item-image" style="background-image: url('bags.jpg');"></div>
-            <div class="item-category">Bags</div>
-            <div class="item-description">Carry your essentials in style with our fashionable and functional bags. Whether for work or leisure, our collection offers trendy options for every occasion.</div>
-            <a href="#" class="view-button">View Item</a>
-        </div>
-
-        <!-- Add more product items with similar structure -->
-
+    <div class="product-item" onclick="logItemClick('Toys')">
+        <div class="item-image" style="background-image: url('toys.jpg');"></div>
+        <div class="item-category">Toys</div>
+        <div class="item-description">Explore our delightful collection of toys for all ages. From educational toys to fun playtime companions, we have something for every child.</div>
+        <a href="toys.html" class="view-button">View Item</a>
     </div>
+
+    <div class="product-item" onclick="logItemClick('Home-made Items')">
+        <div class="item-image" style="background-image: url('homemade.jpg');"></div>
+        <div class="item-category">Home-made Items</div>
+        <div class="item-description">Discover the charm of handcrafted, home-made items. Each piece tells a story and adds a personal touch to your home. Browse our unique selection.</div>
+        <a href="#" class="view-button">View Item</a>
+    </div>
+
+    <div class="product-item" onclick="logItemClick('Useful Items')">
+        <div class="item-image" style="background-image: url('useful.jpg');"></div>
+        <div class="item-category">Useful Items</div>
+        <div class="item-description">Find practical and useful items that make your daily life easier. From kitchen gadgets to innovative tools, our collection is designed to enhance your lifestyle.</div>
+        <a href="#" class="view-button">View Item</a>
+    </div>
+
+    <div class="product-item" onclick="logItemClick('Books')">
+        <div class="item-image" style="background-image: url('books.jpg');"></div>
+        <div class="item-category">Books</div>
+        <div class="item-description">Dive into captivating stories and insightful knowledge with our diverse collection of books. Explore various genres to satisfy your literary cravings.</div>
+        <a href="#" class="view-button">View Item</a>
+    </div>
+
+    <div class="product-item" onclick="logItemClick('Bags')">
+        <div class="item-image" style="background-image: url('bags.jpg');"></div>
+        <div class="item-category">Bags</div>
+        <div class="item-description">Carry your essentials in style with our fashionable and functional bags. Whether for work or leisure, our collection offers trendy options for every occasion.</div>
+        <a href="#" class="view-button">View Item</a>
+    </div>
+
+    <!-- Add more product items with similar structure -->
+
+</div>
 
 </body>
 </html>
