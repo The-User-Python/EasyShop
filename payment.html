@@ -16,35 +16,35 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px; /* Increased max-width for wider design */
             margin: 0 auto;
             padding: 40px;
             background-color: #fff;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
+            border-radius: 20px;
             text-align: left;
         }
 
         h1 {
             color: #3498db;
-            margin-bottom: 20px;
+            margin-bottom: 30px; /* Increased margin-bottom */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .payment-details {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start; /* Adjusted alignment */
             flex-wrap: wrap;
         }
 
         .qr-code {
-            width: 300px;
-            height: 300px;
+            width: 400px; /* Increased width */
+            height: 400px; /* Increased height */
             background-size: cover;
             background-position: center;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Increased box-shadow */
         }
 
         .payment-info {
@@ -53,7 +53,7 @@
         }
 
         .description {
-            margin-bottom: 20px;
+            margin-bottom: 30px; /* Increased margin-bottom */
             color: #555;
         }
 
@@ -68,36 +68,50 @@
         }
 
         .security-info {
-            margin-top: 20px;
-            padding: 15px;
+            margin-top: 30px; /* Increased margin-top */
+            padding: 20px; /* Increased padding */
             background-color: #2ecc71;
             color: #fff;
-            border-radius: 8px;
+            border-radius: 10px; /* Adjusted border-radius */
         }
 
         .additional-feature {
-            margin-top: 30px;
-            font-size: 18px;
+            margin-top: 40px; /* Increased margin-top */
+            font-size: 20px; /* Increased font-size */
             color: #3498db;
             text-decoration: underline;
             cursor: pointer;
         }
 
         .additional-content {
-            display: none;
             margin-top: 20px;
-            color: #777;
+            color: #555;
+            display: none;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 800px) {
+            .container {
+                padding: 30px; /* Adjusted padding */
+            }
+
             .payment-details {
                 flex-direction: column;
                 align-items: center;
             }
 
             .qr-code {
-                margin-right: 0;
+                width: 300px;
+                height: 300px;
                 margin-bottom: 20px;
+            }
+
+            .payment-info {
+                padding-left: 0;
+            }
+
+            .additional-feature {
+                margin-top: 30px;
+                font-size: 18px;
             }
         }
     </style>
