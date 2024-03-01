@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Building Block - EasyShop.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
 
@@ -26,6 +28,7 @@
             color: #333;
             text-align: center;
             margin-bottom: 20px;
+            font-size: 32px;
         }
 
         .product-details {
@@ -37,8 +40,8 @@
 
         .product-image {
             width: 100%;
-            max-width: 500px;
-            height: 300px; /* Set your preferred height */
+            max-width: 600px;
+            height: 400px;
             background-size: cover;
             background-position: center;
             margin-bottom: 20px;
@@ -48,7 +51,7 @@
         }
 
         .product-image:hover {
-            transform: scale(1.08);
+            transform: scale(1.05);
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
         }
 
@@ -65,9 +68,8 @@
         .price {
             font-size: 28px;
             margin-bottom: 15px;
-            color: #333;
-            font-weight: bold;
             color: #e60000; /* Red color for price */
+            font-weight: bold;
         }
 
         .availability {
@@ -99,11 +101,13 @@
         .rating {
             display: flex;
             align-items: center;
+            color: #333;
         }
 
         .star {
             color: #ffcc00;
             margin-right: 7px;
+            font-size: 18px;
         }
 
         /* Detailed Description */
@@ -111,9 +115,15 @@
             margin-top: 40px;
         }
 
-        /* Remove Buy Now */
-        .buy-now {
-            display: none;
+        .detailed-description h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .detailed-description p {
+            color: #666;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -128,7 +138,7 @@
             <div class="product-image" style="background-image: url('creative_building_block.jpg');"></div>
 
             <div class="product-info">
-                <p>Description of the Creative Building Block. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Let your child's imagination run wild with the Creative Building Block set. This versatile toy encourages creativity, problem-solving, and fine motor skills. Made from high-quality materials, it's safe for children and built to last.</p>
 
                 <div class="price">Price: ₹250</div>
 
@@ -148,14 +158,13 @@
                         <span class="star">★</span>
                         <span class="star">★</span>
                         <span class="star">☆</span>
-                        <!-- Add more stars as needed -->
                     </div>
                 </div>
 
                 <!-- Detailed Description -->
                 <div class="detailed-description">
                     <h2>Detailed Description</h2>
-                    <p>Further details about the Creative Building Block. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Enhance your child's playtime with the Creative Building Block set. It includes a variety of colorful blocks in different shapes and sizes, allowing your child to build anything they can imagine. Whether they're constructing towering castles or futuristic spaceships, this toy provides endless hours of entertainment and learning.</p>
                 </div>
             </div>
         </div>
