@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun Play Set - EasyShop.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
 
         .container {
@@ -18,7 +20,7 @@
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
 
@@ -38,7 +40,7 @@
         .product-image {
             width: 100%;
             max-width: 500px;
-            height: 300px; /* Set your preferred height */
+            height: 300px;
             background-size: cover;
             background-position: center;
             margin-bottom: 20px;
@@ -57,11 +59,6 @@
             padding: 0 20px;
         }
 
-        p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
         .price {
             font-size: 28px;
             margin-bottom: 15px;
@@ -70,17 +67,17 @@
         }
 
         .availability {
-            color: #008000; /* Green color for availability */
+            color: #008000;
             margin-bottom: 25px;
         }
 
         .buy-now {
             background-color: #ffcc00;
-            padding: 18px;
+            padding: 18px 40px;
             text-align: center;
             color: #333;
             text-decoration: none;
-            display: block;
+            display: inline-block;
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
@@ -126,6 +123,17 @@
         .detailed-description {
             margin-top: 40px;
         }
+
+        .detailed-description h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .detailed-description p {
+            color: #666;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -139,7 +147,7 @@
             <div class="product-image" style="background-image: url('fun_play_set.jpg');"></div>
 
             <div class="product-info">
-                <p>Description of the Fun Play Set. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>This Fun Play Set will bring endless joy to your little ones. It features a variety of interactive toys that stimulate creativity and imagination. Made from durable materials, it ensures long-lasting fun for your kids.</p>
 
                 <div class="price">Price: ₹150</div>
 
@@ -161,14 +169,13 @@
                         <span class="star">★</span>
                         <span class="star">★</span>
                         <span class="star">☆</span>
-                        <!-- Add more stars as needed -->
                     </div>
                 </div>
 
                 <!-- Detailed Description -->
                 <div class="detailed-description">
                     <h2>Detailed Description</h2>
-                    <p>Further details about the Fun Play Set. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Enhance your child's playtime with this Fun Play Set. It includes a variety of toys such as building blocks, puzzles, and interactive games. The set is designed to promote cognitive development and social skills in children.</p>
                 </div>
             </div>
         </div>
