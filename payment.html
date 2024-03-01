@@ -31,13 +31,6 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .payment-details {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start; /* Adjusted alignment */
-            flex-wrap: wrap;
-        }
-
         .qr-code {
             width: 400px; /* Increased width */
             height: 400px; /* Increased height */
@@ -45,15 +38,16 @@
             background-position: center;
             border-radius: 20px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Increased box-shadow */
+            cursor: pointer; /* Added cursor pointer */
         }
 
         .payment-info {
-            flex: 1;
             padding-left: 40px;
         }
 
-        .description {
-            margin-bottom: 30px; /* Increased margin-bottom */
+        p {
+            margin-bottom: 20px;
+            line-height: 1.8;
             color: #555;
         }
 
@@ -105,27 +99,12 @@
                 margin-bottom: 20px;
             }
 
-            .payment-info {
-                padding-left: 0;
-            }
-
             .additional-feature {
                 margin-top: 30px;
                 font-size: 18px;
             }
         }
     </style>
-    <script>
-        function handleRefundLinkClick() {
-            alert("For more information on our refund policy, please visit the Refund Policy page.");
-            // You can redirect the user to the refund page or add custom logic here.
-        }
-
-        function toggleAdditionalContent() {
-            var additionalContent = document.querySelector('.additional-content');
-            additionalContent.style.display = additionalContent.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
 </head>
 
 <body>
@@ -136,10 +115,11 @@
 
         <div class="payment-details">
 
-            <div class="qr-code" style="background-image: url('enhanced_qr_code.jpg');"></div>
+            <!-- Replace the background image URL with your Fampay or GPay or PayPal QR code URL -->
+            <div class="qr-code" style="background-image: url('your_qr_code_url_here.jpg');"></div>
 
             <div class="payment-info">
-                <p class="description">Embark on a seamless and secure shopping journey with EasyShop's enhanced payment process. Simply scan the updated QR code using your preferred payment app to complete your purchase.</p>
+                <p>Embark on a seamless and secure shopping journey with EasyShop's enhanced payment process. Simply scan the updated QR code using your preferred payment app to complete your purchase.</p>
 
                 <p>For a detailed overview of our refund policy, please explore the <a href="refund.html" class="refund-link"
                         onclick="handleRefundLinkClick()">Refund Policy</a> page.</p>
