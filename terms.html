@@ -16,10 +16,8 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
             padding: 20px;
         }
 
@@ -41,64 +39,37 @@
             margin-bottom: 20px;
         }
 
-        .link-container {
-            margin-top: 20px;
+        .terms-section {
+            margin-bottom: 40px;
+        }
+
+        .terms {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .terms h3 {
+            margin-top: 30px;
+        }
+
+        .terms ul {
+            margin-left: 20px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
         }
 
         .nav-link {
-            display: block;
-            padding: 15px;
-            text-decoration: none;
-            color: #fff;
-            background-color: #333;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-link:hover {
-            background-color: #555;
-        }
-
-        .btn-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .action-btn {
+            display: inline-block;
             padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
+            text-decoration: none;
+            color: #333; /* Black color for navigation */
             border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .action-btn:hover {
-            background-color: #45a049;
-        }
-
-        .dark-mode-btn {
-            margin-top: 10px;
-            padding: 10px 15px;
-            font-size: 14px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .dark-mode-btn:hover {
-            background-color: #555;
-        }
-
-        .dark-mode {
-            background-color: #333;
-            color: #fff;
+            margin-right: 20px; /* Add space between navigation links */
         }
     </style>
 </head>
@@ -108,48 +79,50 @@
     <div class="container">
 
         <div class="header">
-            <h1>Terms&Conditions</h1>
-            <p>Your go-to destination for quality products and seamless shopping experiences.</p>
+            <h1>Terms & Conditions</h1>
+            <p>Welcome to EasyShop.com, your premier destination for quality products and exceptional shopping experiences.</p>
         </div>
 
-        <h2>Terms and Conditions</h2>
+        <section class="terms-section">
+            <h2>Terms and Conditions</h2>
 
-        <div class="description">
-            <p>By using EasyShop.com, you agree to comply with and be bound by the following terms and conditions. If you disagree with any part of these terms, please do not use our website.</p>
-        </div>
+            <div class="description">
+                <p>By accessing and using EasyShop.com, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our website.</p>
+            </div>
 
-        <h3>1. Website Usage</h3>
-        <p>You agree to use this website for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the site.</p>
+            <div class="terms">
+                <h3>1. Website Usage</h3>
+                <p>Use of this website is subject to the following terms of use:</p>
+                <ul>
+                    <li>You agree to use EasyShop.com for lawful purposes only.</li>
+                    <li>You must not use this website in any way that causes, or may cause, damage to the website or impairment of the availability or accessibility of EasyShop.com.</li>
+                    <li>We reserve the right to restrict access to certain areas of the website, or indeed our whole website, at our discretion.</li>
+                </ul>
 
-        <h3>2. Intellectual Property</h3>
-        <p>All trademarks, service marks, trade names, and trade dress on this site are the property of their respective owners.</p>
+                <h3>2. Intellectual Property</h3>
+                <p>All trademarks, service marks, trade names, and logos appearing on EasyShop.com are the property of their respective owners.</p>
 
-        <h3>3. Links to Other Websites</h3>
-        <p>Our website may contain links to third-party websites or services that are not owned or controlled by EasyShop.com. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites or services.</p>
+                <h3>3. Links to Other Websites</h3>
+                <p>EasyShop.com may contain links to third-party websites or services. We have no control over the content, privacy policies, or practices of any third-party websites, and we do not assume any responsibility for them.</p>
 
-        <h3>4. Contact Us</h3>
-        <p>For any questions regarding our terms and conditions, feel free to <a href="contact.html">contact us</a>.</p>
+                <h3>4. Privacy Policy</h3>
+                <p>We are committed to protecting your privacy. Our Privacy Policy outlines how we collect, use, and protect your personal information.</p>
 
-        <div class="link-container">
-            <a class="nav-link" href="contact.html">Contact Us</a>
-        </div>
+                <h3>5. Refund Policy</h3>
+                <p>We want you to be completely satisfied with your purchase. Read our Refund Policy to understand our guidelines for returns and refunds.</p>
 
-        <div class="btn-container">
-            <button class="action-btn" onclick="performAction()">Click me for an action</button>
-            <button class="dark-mode-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-        </div>
+                <h3>6. Contact Us</h3>
+                <p>If you have any questions about our terms and conditions, please feel free to <a href="contact.html">contact us</a>.</p>
+            </div>
+        </section>
+
+        <nav class="navigation">
+            <a href="privacy.html" class="nav-link">Privacy Policy</a>
+            <a href="refund.html" class="nav-link">Refund Policy</a>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+        </nav>
 
     </div>
-
-    <script>
-        function performAction() {
-            alert('This is a button action!');
-        }
-
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-        }
-    </script>
 
 </body>
 
