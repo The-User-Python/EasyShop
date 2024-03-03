@@ -16,78 +16,66 @@
         }
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .header {
-            background-color: #ffcc00;
+            background: linear-gradient(to right, #ff8a00, #ffcc00);
             padding: 20px;
             text-align: center;
-            border-bottom: 2px solid #000;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        .highlight {
-            color: #333;
+        .header h1 {
+            margin: 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .line {
-            border-top: 1px solid #000000;
-            margin: 20px 0;
+        .header p {
+            color: #fff;
+            margin-top: 10px;
         }
 
         .content {
             padding: 20px;
-        }
-
-        .search-bar {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .search-input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-right: 10px;
-            flex: 1;
-        }
-
-        .search-button {
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .comment-section {
             margin-top: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 20px;
         }
 
         .comment-form input,
         .comment-form textarea {
             margin-bottom: 10px;
             padding: 10px;
-            width: 100%;
+            width: calc(100% - 22px);
             border: 1px solid #ccc;
             border-radius: 5px;
         }
 
         .comment-form button {
             padding: 10px 20px;
-            background-color: #333;
+            background-color: #ff8a00;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background-color: #ff6b00;
         }
 
         .comments {
@@ -97,16 +85,26 @@
         .comment {
             border-bottom: 1px solid #ccc;
             padding: 20px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment:hover {
+            background-color: #f0f0f0;
         }
 
         .comment button {
             margin-left: 10px;
             padding: 5px 10px;
-            background-color: #333;
+            background-color: #ff6b00;
             color: #fff;
             border: none;
             border-radius: 3px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment button:hover {
+            background-color: #ff8a00;
         }
 
         .additional-links {
@@ -120,6 +118,11 @@
             color: #333;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .additional-links a:hover {
+            color: #ff8a00;
         }
 
         .copyright {
@@ -130,22 +133,6 @@
             margin-top: 20px;
             border-radius: 10px;
         }
-
-        @media (max-width: 768px) {
-            .search-bar {
-                flex-direction: column;
-            }
-
-            .search-input {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-
-            .search-button {
-                width: 100%;
-            }
-        }
-
     </style>
 </head>
 
@@ -154,22 +141,16 @@
     <div class="container">
 
         <div class="header">
-            <h1 class="highlight">EasyShop.com - Reviews</h1>
+            <h1>EasyShop.com - Reviews</h1>
             <p>Explore reviews from our satisfied customers. Share your experience with us!</p>
         </div>
 
-        <div class="line"></div>
-
         <div class="content">
-            <div class="search-bar">
-                <input type="text" class="search-input" placeholder="Search for reviews, usernames, products">
-                <button class="search-button" onclick="searchRedirect()">Search</button>
-            </div>
 
             <div class="comment-section">
-                <h3 class="highlight">Leave a Review</h3>
+                <h3>Leave a Review</h3>
                 <form class="comment-form" onsubmit="submitComment(event)">
-                    <input type="text" placeholder="Username" id="username" required>
+                    <input type="text" placeholder="Instagram or Twitter Username" id="username" required>
                     <input type="text" placeholder="Real Name" id="realName" required>
                     <input type="email" placeholder="Email Address" id="email" required>
                     <textarea placeholder="Your Review" rows="4" id="review" required></textarea>
@@ -177,16 +158,14 @@
                 </form>
 
                 <div class="comments" id="commentsContainer">
-                    <h3 class="highlight">Reviews</h3>
+                    <h3>Reviews</h3>
                     <!-- Reviews will be dynamically added here -->
                 </div>
             </div>
         </div>
 
-        <div class="line"></div>
-
         <div class="additional-links">
-            <h3 class="highlight">Explore More</h3>
+            <h3>Explore More</h3>
             <a href="product.html">Featured Products</a>
             <a href="terms.ht">Terms and Conditions</a>
             <a href="refund.html">Refund Policy</a>
@@ -195,8 +174,6 @@
             <a href="faq.html">FAQs</a>
         </div>
 
-        <div class="line"></div>
-
         <div class="copyright">
             <p>&copy; 2024 EasyShop.com. All Rights Reserved.</p>
         </div>
@@ -204,9 +181,6 @@
     </div>
 
     <script>
-        // Your existing JavaScript functions for comment handling and local storage can be added here
-        // For example, you can use the following functions:
-
         // Function to submit a new comment
         function submitComment(event) {
             event.preventDefault();
@@ -339,9 +313,6 @@
 
         // Initial refresh of comments when the page loads
         refreshComments();
-
-        // Your existing searchRedirect() function can be added here
-
     </script>
 
 </body>
