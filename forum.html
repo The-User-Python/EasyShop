@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyShop</title>
+    <title>Forum|EasyShop</title>
     <style>
         body {
             font-family: 'Trebuchet MS', sans-serif;
@@ -15,10 +15,8 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1600px; /* Increased max-width for broader design */
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
             padding: 20px;
         }
 
@@ -26,6 +24,7 @@
         h2,
         h3 {
             color: #333;
+            margin: 0;
         }
 
         .header {
@@ -36,39 +35,33 @@
         }
 
         .content {
-            padding: 20px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            flex-grow: 1;
+            gap: 40px; /* Increased gap for wider spacing */
         }
 
         .forum {
             flex: 1;
-            margin-right: 20px;
-        }
-
-        .topics {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-width: 350px; /* Increased min-width for wider forums */
         }
 
         .topic {
-            margin-bottom: 20px;
-        }
-
-        .topic-description {
-            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .view-btn {
             background-color: #333;
             color: #fff;
-            padding: 10px;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s;
         }
 
         .view-btn:hover {
@@ -76,13 +69,13 @@
         }
 
         .additional-links {
-            width: 25%;
-            padding-left: 15px;
+            width: 100%;
+            text-align: center;
         }
 
         .line {
-            border-top: 1px solid #000000;
-            margin: 20px 0;
+            border-top: 2px solid #000000;
+            margin: 40px 0; /* Increased margin for wider space */
         }
 
         .copyright {
@@ -95,6 +88,16 @@
         .highlight {
             color: #ffcc00;
             font-weight: bold;
+        }
+
+        @media screen and (min-width: 768px) {
+            .forum {
+                flex-basis: 50%; /* Adjusted flex-basis for wider forums */
+            }
+
+            .additional-links {
+                width: 45%; /* Adjusted width for wider additional links */
+            }
         }
     </style>
 </head>
@@ -117,21 +120,22 @@
                     <p class="topic-description">Discuss anything related to our products and services.</p>
                     <a class="view-btn" href="generaltopic.html">View General Topics</a>
                 </div>
+            </div>
 
+            <div class="forum">
                 <div class="topic">
                     <h2 class="highlight">Feedback Topics</h2>
                     <p class="topic-description">Provide feedback on your experience with EasyShop.</p>
                     <a class="view-btn" href="feedbacktopic.html">View Feedback Topics</a>
                 </div>
+            </div>
 
+            <div class="forum">
                 <div class="topic">
                     <h2 class="highlight">Off Topics</h2>
                     <p class="topic-description">Relax and chat about non-related topics here.</p>
                     <a class="view-btn" href="offtopic.html">View Off Topics</a>
                 </div>
-            </div>
-
-            <div class="additional-links">
             </div>
         </div>
 
